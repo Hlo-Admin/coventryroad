@@ -1,6 +1,5 @@
-
 import { useState } from 'react';
-import { Phone, Mail, Calendar, Play, ChevronDown, ChevronUp, MessageCircle } from 'lucide-react';
+import { Phone, Mail, Calendar, Play, ChevronDown, ChevronUp, MessageCircle, Smile, Apple, MessageSquare, Gem, Bone, Stethoscope, PoundSterling, CalendarDays, CreditCard, Percent, FileText, Building2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -10,14 +9,14 @@ const FullArchImplants = () => {
   const [activeTab, setActiveTab] = useState('all-on-6');
   
   const benefits = [
-    { icon: '😁', title: 'Regain confidence to smile again' },
-    { icon: '🍎', title: 'Eat your favourite food without struggle' },
-    { icon: '💬', title: 'No more loose dentures or adhesives' },
-    { icon: '💎', title: 'Natural look and feel' },
-    { icon: '🦴', title: 'Restore facial shape & structure' },
-    { icon: '🩺', title: 'Digital workflow = better outcomes' },
-    { icon: '💷', title: 'Starting from £2,650 per implant' },
-    { icon: '📆', title: '0% finance available with Chrysalis' }
+    { icon: Smile, title: 'Regain confidence to smile again' },
+    { icon: Apple, title: 'Eat your favourite food without struggle' },
+    { icon: MessageSquare, title: 'No more loose dentures or adhesives' },
+    { icon: Gem, title: 'Natural look and feel' },
+    { icon: Bone, title: 'Restore facial shape & structure' },
+    { icon: Stethoscope, title: 'Digital workflow = better outcomes' },
+    { icon: PoundSterling, title: 'Starting from £2,650 per implant' },
+    { icon: CalendarDays, title: '0% finance available with Chrysalis' }
   ];
 
   const implantTypes = [
@@ -264,8 +263,8 @@ const FullArchImplants = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {benefits.map((benefit, index) => (
               <div key={index} className="bg-white rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 group">
-                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">
-                  {benefit.icon}
+                <div className="mb-4 group-hover:scale-110 transition-transform">
+                  <benefit.icon className="w-8 h-8 text-[#63316b] mx-auto" />
                 </div>
                 <p className="text-gray-900 font-medium">
                   {benefit.title}
@@ -331,25 +330,33 @@ const FullArchImplants = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-white rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300">
-              <div className="text-3xl mb-4">0️⃣</div>
+              <div className="mb-4">
+                <Percent className="w-8 h-8 text-[#63316b] mx-auto" />
+              </div>
               <h3 className="font-bold text-gray-900 mb-2">0.0% APR Finance</h3>
               <p className="text-gray-600 text-sm">for up to 12 months*</p>
             </div>
             
             <div className="bg-white rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300">
-              <div className="text-3xl mb-4">📅</div>
+              <div className="mb-4">
+                <CalendarDays className="w-8 h-8 text-[#63316b] mx-auto" />
+              </div>
               <h3 className="font-bold text-gray-900 mb-2">Longer Options</h3>
               <p className="text-gray-600 text-sm">available via Chrysalis Finance</p>
             </div>
             
             <div className="bg-white rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300">
-              <div className="text-3xl mb-4">💎</div>
+              <div className="mb-4">
+                <Gem className="w-8 h-8 text-[#63316b] mx-auto" />
+              </div>
               <h3 className="font-bold text-gray-900 mb-2">Transparent Pricing</h3>
               <p className="text-gray-600 text-sm">& premium quality</p>
             </div>
             
             <div className="bg-white rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300">
-              <div className="text-3xl mb-4">💷</div>
+              <div className="mb-4">
+                <PoundSterling className="w-8 h-8 text-[#63316b] mx-auto" />
+              </div>
               <h3 className="font-bold text-gray-900 mb-2">Full Arch starts</h3>
               <p className="text-gray-600 text-sm">from £12,500 per arch</p>
             </div>
