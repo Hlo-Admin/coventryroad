@@ -89,40 +89,40 @@ const Dentures = () => {
     <>
       <Header />
       <div className="min-h-screen pt-16">
-        {/* Hero Section - Minimal with 3D Object */}
+        {/* Hero Section with 3D Model - Visible on all devices */}
         <section className="relative min-h-screen bg-gradient-to-br from-gray-50 to-white overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-screen flex items-center">
-            <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full">
               {/* Left Content */}
-              <div className="space-y-8">
-                <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
+              <div className="space-y-8 order-2 lg:order-1">
+                <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
                   Restore Your Smile with
                   <span className="text-[#63316b] block">Dentures</span>
                 </h1>
-                <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed">
+                <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 leading-relaxed">
                   Tailored solutions that fit comfortably, look natural, and bring back confidence in your everyday life.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
-                    <Phone className="w-5 h-5" />
+                  <button className="bg-[#63316b] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center justify-center space-x-2">
+                    <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
                     <span>Request a Callback</span>
                   </button>
-                  <button className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2">
-                    <Calendar className="w-5 h-5" />
+                  <button className="border-2 border-[#63316b] text-[#63316b] px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center justify-center space-x-2">
+                    <Calendar className="w-4 h-4 sm:w-5 sm:h-5" />
                     <span>Book Free Consultation</span>
                   </button>
                 </div>
               </div>
               
-              {/* Right 3D Object Placeholder */}
-              <div className="flex justify-center items-center">
-                <div className="w-96 h-96 glass bg-gradient-to-br from-[#63316b]/10 to-purple-100 rounded-3xl flex items-center justify-center border border-white/20 shadow-2xl">
+              {/* Right 3D Object - Visible on all devices */}
+              <div className="flex justify-center items-center order-1 lg:order-2">
+                <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 glass bg-gradient-to-br from-[#63316b]/10 to-purple-100 rounded-3xl flex items-center justify-center border border-white/20 shadow-2xl">
                   <div className="text-center">
-                    <div className="w-24 h-24 bg-[#63316b]/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Wrench className="w-12 h-12 text-[#63316b]" />
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-[#63316b]/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Wrench className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-[#63316b]" />
                     </div>
-                    <p className="text-[#63316b] font-medium">3D Denture Model</p>
-                    <p className="text-gray-600 text-sm">Interactive visualization</p>
+                    <p className="text-[#63316b] font-medium text-sm sm:text-base">3D Denture Model</p>
+                    <p className="text-gray-600 text-xs sm:text-sm">Interactive visualization</p>
                   </div>
                 </div>
               </div>

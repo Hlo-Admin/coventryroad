@@ -1,5 +1,5 @@
 
-import { ArrowRight, Phone, Calendar, CheckCircle, Sparkles, Smile, Shield, DollarSign, Syringe, Heart } from 'lucide-react';
+import { ArrowRight, Phone, Calendar, CheckCircle, Sparkles, Smile, Shield, DollarSign, Syringe, Heart, Wrench } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import Header from '../components/Header';
@@ -66,26 +66,43 @@ const DentalImplants = () => {
     <>
       <Header />
       <div className="min-h-screen pt-16">
-        {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-gray-50 to-white py-20 lg:py-32 overflow-hidden">
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6 animate-fadeInUp">
-                Premium{' '}
-                <span className="text-[#63316b]">Dental Implants</span> in Coventry
-              </h1>
-              <p className="text-xl lg:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto animate-fadeInUp">
-                Replace missing teeth with permanent, natural-looking dental implants that function just like your own teeth.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp">
-                <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
-                  <Phone className="w-5 h-5" />
-                  <span>Request a Callback</span>
-                </button>
-                <button className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2">
-                  <Calendar className="w-5 h-5" />
-                  <span>Book Free Consultation</span>
-                </button>
+        {/* Hero Section with 3D Model */}
+        <section className="relative min-h-screen bg-gradient-to-br from-gray-50 to-white overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-screen flex items-center">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full">
+              {/* Left Content */}
+              <div className="space-y-8 order-2 lg:order-1">
+                <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                  Premium
+                  <span className="text-[#63316b] block">Dental Implants</span>
+                  in Coventry
+                </h1>
+                <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 leading-relaxed">
+                  Replace missing teeth with permanent, natural-looking dental implants that function just like your own teeth.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <button className="bg-[#63316b] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center justify-center space-x-2">
+                    <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
+                    <span>Request a Callback</span>
+                  </button>
+                  <button className="border-2 border-[#63316b] text-[#63316b] px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center justify-center space-x-2">
+                    <Calendar className="w-4 h-4 sm:w-5 sm:h-5" />
+                    <span>Book Free Consultation</span>
+                  </button>
+                </div>
+              </div>
+              
+              {/* Right 3D Object - Visible on all devices */}
+              <div className="flex justify-center items-center order-1 lg:order-2">
+                <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 glass bg-gradient-to-br from-[#63316b]/10 to-purple-100 rounded-3xl flex items-center justify-center border border-white/20 shadow-2xl">
+                  <div className="text-center">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-[#63316b]/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Wrench className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-[#63316b]" />
+                    </div>
+                    <p className="text-[#63316b] font-medium text-sm sm:text-base">3D Implant Model</p>
+                    <p className="text-gray-600 text-xs sm:text-sm">Interactive visualization</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
