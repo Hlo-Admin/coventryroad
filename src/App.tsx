@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import AboutPage from "./pages/About";
 import FullArchImplants from "./pages/FullArchImplants";
 import CompositeBonding from "./pages/CompositeBonding";
 import InvisalignBraces from "./pages/InvisalignBraces";
@@ -25,6 +26,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="/full-arch-implants" element={<FullArchImplants />} />
           <Route path="/composite-bonding" element={<CompositeBonding />} />
           <Route path="/invisalign-braces" element={<InvisalignBraces />} />

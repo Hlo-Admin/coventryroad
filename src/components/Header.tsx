@@ -69,7 +69,7 @@ const Header = () => {
                 </div>
               </div>
               
-              <Link to="/#about" className="text-gray-700 hover:text-[#63316b] font-medium transition-colors">About</Link>
+              <Link to="/about" className="text-gray-700 hover:text-[#63316b] font-medium transition-colors">About</Link>
               <Link to="/#contact" className="text-gray-700 hover:text-[#63316b] font-medium transition-colors">Contact</Link>
             </div>
 
@@ -113,7 +113,7 @@ const Header = () => {
                   ))}
                 </div>
                 
-                <Link to="/#about" className="block text-gray-700 hover:text-[#63316b] font-medium py-2">About</Link>
+                <Link to="/about" className="block text-gray-700 hover:text-[#63316b] font-medium py-2">About</Link>
                 <Link to="/#contact" className="block text-gray-700 hover:text-[#63316b] font-medium py-2">Contact</Link>
                 <div className="pt-4 border-t border-white/20">
                   <div className="flex items-center space-x-2 text-sm text-gray-600 mb-4">
