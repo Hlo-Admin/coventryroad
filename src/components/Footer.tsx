@@ -31,18 +31,12 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div className="lg:col-span-1 space-y-6">
-            <Link to="/" className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center border border-white/20">
-                <img 
-                  src="/lovable-uploads/6835c5cd-d5a1-4f43-bdd2-b4f8e4281f53.png" 
-                  alt="Coventry Road Dentalcare" 
-                  className="h-8 w-auto"
-                />
-              </div>
-              <div>
-                <h3 className="font-bold text-xl text-white">Coventry Road</h3>
-                <span className="text-sm text-white/80 font-medium">Dentalcare</span>
-              </div>
+            <Link to="/" className="flex items-center">
+              <img 
+                src="/lovable-uploads/6835c5cd-d5a1-4f43-bdd2-b4f8e4281f53.png" 
+                alt="Coventry Road Dentalcare" 
+                className="h-12 w-auto"
+              />
             </Link>
             
             <p className="text-white/80 leading-relaxed">
