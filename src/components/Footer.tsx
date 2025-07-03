@@ -1,5 +1,5 @@
 
-import { MapPin, Phone, Mail, Facebook, Twitter, Instagram, Linkedin, Heart, Star } from 'lucide-react';
+import { MapPin, Phone, Mail, Facebook, Twitter, Instagram, Linkedin, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -15,8 +15,8 @@ const Footer = () => {
   ];
 
   const quickLinks = [
-    "About Us",
-    "Contact Us"
+    { name: "About Us", path: "/about" },
+    { name: "Contact Us", path: "/#contact" }
   ];
 
   return (
@@ -77,13 +77,13 @@ const Footer = () => {
             <h4 className="font-semibold text-lg mb-6 text-white">Quick Links</h4>
             <div className="space-y-4">
               {quickLinks.map((link, index) => (
-                <a 
+                <Link 
                   key={index}
-                  href="#" 
-                  className="block text-white/80 hover:text-white transition-colors duration-300 hover:translate-x-2 transform"
+                  to={link.path} 
+                  className="block text-white/80 hover:text-white transition-colours duration-300 hover:translate-x-2 transform"
                 >
-                  {link}
-                </a>
+                  {link.name}
+                </Link>
               ))}
             </div>
           </div>
@@ -96,7 +96,7 @@ const Footer = () => {
                 <Link 
                   key={index}
                   to={treatment.path} 
-                  className="block text-white/80 hover:text-white transition-colors duration-300 hover:translate-x-2 transform"
+                  className="block text-white/80 hover:text-white transition-colours duration-300 hover:translate-x-2 transform"
                 >
                   {treatment.name}
                 </Link>
@@ -166,15 +166,13 @@ const Footer = () => {
           <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
             <div className="flex items-center space-x-2 text-white/80 text-sm">
               <span>© 2024 Coventry Road Dentalcare. All rights reserved.</span>
-              <Heart className="w-4 h-4 text-red-400 fill-current" />
-              <span>Made with care in Coventry</span>
             </div>
             
-            <div className="flex flex-wrap justify-center lg:justify-end space-x-6 text-sm">
-              <a href="#" className="text-white/80 hover:text-white transition-colors duration-300">Privacy Policy</a>
-              <a href="#" className="text-white/80 hover:text-white transition-colors duration-300">Terms of Service</a>
-              <a href="#" className="text-white/80 hover:text-white transition-colors duration-300">Cookie Policy</a>
-              <a href="#" className="text-white/80 hover:text-white transition-colors duration-300">Sitemap</a>
+            <div className="flex flex-wrap justify-centre lg:justify-end space-x-6 text-sm">
+              <Link to="/privacy-policy" className="text-white/80 hover:text-white transition-colours duration-300">Privacy Policy</Link>
+              <Link to="/terms-of-service" className="text-white/80 hover:text-white transition-colours duration-300">Terms of Service</Link>
+              <Link to="/cookie-policy" className="text-white/80 hover:text-white transition-colours duration-300">Cookie Policy</Link>
+              <Link to="/sitemap" className="text-white/80 hover:text-white transition-colours duration-300">Sitemap</Link>
             </div>
           </div>
         </div>

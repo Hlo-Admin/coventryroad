@@ -136,10 +136,10 @@ const FullArchImplants = () => {
         </div>
       </section>
 
-      {/* Before & After Gallery */}
+      {/* Before & After Gallery - Revamped */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-centre mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Real Patient Smiles Transformed
             </h2>
@@ -148,33 +148,43 @@ const FullArchImplants = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3].map((item) => (
-              <div key={item} className="group relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
-                <div className="grid grid-cols-2">
-                  <div className="relative">
-                    <img 
-                      src={`https://images.unsplash.com/photo-158861761${item}-4486d14f3f99?w=300&h=200&fit=crop`} 
-                      alt="Before treatment"
-                      className="w-full h-40 object-cover"
-                    />
-                    <div className="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded text-sm font-medium">
-                      Before
-                    </div>
-                  </div>
-                  <div className="relative">
-                    <img 
-                      src={`https://images.unsplash.com/photo-160681197161${item}?w=300&h=200&fit=crop`} 
-                      alt="After treatment"
-                      className="w-full h-40 object-cover"
-                    />
-                    <div className="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded text-sm font-medium">
-                      After
-                    </div>
-                  </div>
+          <div className="grid lg:grid-cols-2 gap-12 items-centre">
+            {/* Before Image */}
+            <div className="relative group">
+              <div className="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-gray-100">
+                <img 
+                  src="/lovable-uploads/ae0893e2-a6ea-4235-9a36-845cce3bbe67.png" 
+                  alt="Before dental implant treatment"
+                  className="w-full h-64 md:h-80 object-cover"
+                />
+                <div className="absolute top-4 left-4 bg-red-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
+                  Before Treatment
                 </div>
               </div>
-            ))}
+            </div>
+
+            {/* After Image */}
+            <div className="relative group">
+              <div className="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-green-100">
+                <img 
+                  src="/lovable-uploads/b3719a1c-237e-40d0-9e7a-b224c1dcd1d6.png" 
+                  alt="After dental implant treatment"
+                  className="w-full h-64 md:h-80 object-cover"
+                />
+                <div className="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
+                  After Treatment
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-centre mt-12">
+            <p className="text-lg text-gray-600 mb-6">
+              Full arch implants provide a permanent solution for missing teeth, offering natural-looking results and restored functionality.
+            </p>
+            <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 shadow-lg hover:shadow-xl">
+              See Your Transformation
+            </button>
           </div>
         </div>
       </section>
