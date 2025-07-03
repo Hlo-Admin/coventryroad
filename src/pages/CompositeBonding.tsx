@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Phone, Mail, Calendar, Play, ChevronLeft, ChevronRight, Tooth, Mirror, Palette, Smile, Check, PoundSterling, CalendarDays, Heart, Star, MessageCircle, Users, Clock, Shield } from 'lucide-react';
+import { Phone, Mail, Calendar, Play, ChevronLeft, ChevronRight, Zap, Search, Palette, Smile, Check, PoundSterling, CalendarDays, Heart, Star, MessageCircle, Users, Clock, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -16,8 +16,8 @@ const CompositeBonding = () => {
   ];
 
   const benefits = [
-    { icon: Tooth, title: 'Fix chipped or fractured teeth' },
-    { icon: Mirror, title: 'Close gaps between teeth' },
+    { icon: Zap, title: 'Fix chipped or fractured teeth' },
+    { icon: Search, title: 'Close gaps between teeth' },
     { icon: Palette, title: 'Correct discolouration for a brighter look' },
     { icon: Smile, title: 'Smile with confidence again' }
   ];
