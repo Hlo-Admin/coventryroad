@@ -103,7 +103,32 @@ All colors MUST be HSL.
   }
 }
 
-/* Dreamfolks-inspired animations */
+/* Enhanced Glassmorphism Effects */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.glass-primary {
+  background: rgba(99, 49, 107, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(99, 49, 107, 0.2);
+  box-shadow: 0 8px 32px rgba(99, 49, 107, 0.1);
+}
+
+/* Modern animations */
 @keyframes float {
   0%, 100% {
     transform: translateY(0px);
@@ -157,6 +182,15 @@ All colors MUST be HSL.
   }
 }
 
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
 .animate-float {
   animation: float 3s ease-in-out infinite;
 }
@@ -177,15 +211,26 @@ All colors MUST be HSL.
   animation: scaleIn 0.6s ease-out forwards;
 }
 
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200px 100%;
+}
+
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #63316b 0%, #764ba2 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Hover effects */
+/* Enhanced hover effects */
 .hover-lift {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -195,42 +240,41 @@ All colors MUST be HSL.
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
-/* Glass morphism effect */
-.glass {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(99, 49, 107, 0.3);
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 3px;
+  background: rgba(99, 49, 107, 0.5);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: rgba(99, 49, 107, 0.7);
 }
 
 /* Typography */
 .text-gradient {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #63316b 0%, #764ba2 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Buttons */
+/* Enhanced Buttons */
 .btn-primary {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #63316b 0%, #764ba2 100%);
   color: white;
   padding: 12px 32px;
   border-radius: 50px;
@@ -238,38 +282,67 @@ All colors MUST be HSL.
   transition: all 0.3s ease;
   border: none;
   cursor: pointer;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(99, 49, 107, 0.3);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 12px 40px rgba(99, 49, 107, 0.4);
 }
 
 .btn-secondary {
-  background: transparent;
-  color: #374151;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  color: #63316b;
   padding: 12px 32px;
   border-radius: 50px;
   font-weight: 500;
-  border: 2px solid #e5e7eb;
+  border: 2px solid rgba(99, 49, 107, 0.3);
   transition: all 0.3s ease;
   cursor: pointer;
 }
 
 .btn-secondary:hover {
-  border-color: #667eea;
-  color: #667eea;
+  background: #63316b;
+  color: white;
+  border-color: #63316b;
   transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(99, 49, 107, 0.3);
 }
 
-/* Card styles */
+/* Enhanced Card styles */
 .card-hover {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
 }
 
 .card-hover:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  border-color: rgba(102, 126, 234, 0.2);
+  border-color: rgba(99, 49, 107, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Responsive image optimization */
+@media (max-width: 768px) {
+  .hero-image {
+    height: 300px;
+  }
+  
+  .service-image {
+    height: 200px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-image {
+    height: 250px;
+  }
+  
+  .service-image {
+    height: 180px;
+  }
 }
