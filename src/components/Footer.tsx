@@ -46,7 +46,7 @@ const Footer = () => {
             </Link>
             
             <p className="text-white/80 leading-relaxed">
-              Providing exceptional dental care to Coventry and surrounding areas since 2008. Your smile is our priority, and your health is our commitment.
+              Providing exceptional dental care to Coventry Road and surrounding areas since 2008. Your smile is our priority, and your health is our commitment.
             </p>
             
             {/* Awards & Recognition */}

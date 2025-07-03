@@ -11,6 +11,7 @@ const ServiceTiles = () => {
       title: "Full Arch Implants",
       description: "Complete smile restoration in one day",
       icon: <Sparkles className="w-6 h-6" />,
+      image: "/lovable-uploads/b3719a1c-237e-40d0-9e7a-b224c1dcd1d6.png",
       path: "/full-arch-implants",
       gradient: "from-[#63316b] to-purple-600"
     },
@@ -18,6 +19,7 @@ const ServiceTiles = () => {
       title: "Composite Bonding", 
       description: "Natural-looking tooth restoration",
       icon: <Shield className="w-6 h-6" />,
+      image: "/lovable-uploads/ae0893e2-a6ea-4235-9a36-845cce3bbe67.png",
       path: "/composite-bonding",
       gradient: "from-[#63316b] to-pink-600"
     },
@@ -25,6 +27,7 @@ const ServiceTiles = () => {
       title: "Invisalign Braces",
       description: "Invisible teeth straightening",
       icon: <Heart className="w-6 h-6" />,
+      image: "/lovable-uploads/9ca20df0-a984-4c24-bec5-dfa24a26b9ff.png",
       path: "/invisalign-braces",
       gradient: "from-[#63316b] to-indigo-600"
     },
@@ -32,6 +35,7 @@ const ServiceTiles = () => {
       title: "Teeth Whitening",
       description: "Brighter, whiter smile",
       icon: <Zap className="w-6 h-6" />,
+      image: "/lovable-uploads/6ea5a8aa-7b9b-4b0a-a3ff-ba1823a3dfeb.png",
       path: "/teeth-whitening",
       gradient: "from-[#63316b] to-yellow-500"
     },
@@ -39,6 +43,7 @@ const ServiceTiles = () => {
       title: "Veneers",
       description: "Transform with porcelain shells",
       icon: <Award className="w-6 h-6" />,
+      image: "/lovable-uploads/69f725c9-fe56-4589-ba0f-98a1066a2646.png",
       path: "/veneers",
       gradient: "from-[#63316b] to-teal-600"
     },
@@ -46,6 +51,7 @@ const ServiceTiles = () => {
       title: "Dental Implants",
       description: "Permanent tooth replacement",
       icon: <Users className="w-6 h-6" />,
+      image: "/lovable-uploads/b025e17d-dffe-4d21-b83f-005975eaf587.png",
       path: "/dental-implants",
       gradient: "from-[#63316b] to-green-600"
     },
@@ -53,6 +59,7 @@ const ServiceTiles = () => {
       title: "Dentures",
       description: "Comfortable removable teeth",
       icon: <Wrench className="w-6 h-6" />,
+      image: "/lovable-uploads/ae0893e2-a6ea-4235-9a36-845cce3bbe67.png",
       path: "/dentures",
       gradient: "from-[#63316b] to-orange-600"
     },
@@ -60,6 +67,7 @@ const ServiceTiles = () => {
       title: "White Fillings",
       description: "Mercury-free natural fillings",
       icon: <Shield className="w-6 h-6" />,
+      image: "/lovable-uploads/6ea5a8aa-7b9b-4b0a-a3ff-ba1823a3dfeb.png",
       path: "/white-fillings",
       gradient: "from-[#63316b] to-cyan-600"
     }
@@ -126,15 +134,27 @@ const ServiceTiles = () => {
               to={service.path}
               className="group flex-none w-80"
             >
-              <div className={`glass bg-gradient-to-br ${service.gradient} p-6 rounded-2xl text-white hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-white/20`}>
-                <div className="flex items-center justify-between mb-4">
-                  <div className="p-3 bg-white/20 rounded-xl backdrop-blur-sm">
-                    {service.icon}
-                  </div>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <div className={`relative overflow-hidden bg-gradient-to-br ${service.gradient} rounded-2xl text-white hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-white/20`}>
+                {/* Background Image */}
+                <div className="absolute inset-0 opacity-20">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-                <p className="text-white/90 text-sm">{service.description}</p>
+                
+                {/* Content */}
+                <div className="relative p-6 bg-gradient-to-br from-black/40 to-transparent">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="p-3 bg-white/20 rounded-xl backdrop-blur-sm">
+                      {service.icon}
+                    </div>
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">{service.title}</h3>
+                  <p className="text-white/90 text-sm">{service.description}</p>
+                </div>
               </div>
             </Link>
           ))}

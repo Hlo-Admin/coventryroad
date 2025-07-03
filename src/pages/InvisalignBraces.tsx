@@ -10,9 +10,16 @@ const InvisalignBraces = () => {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
   const journeySteps = [
-    { image: '/lovable-uploads/6835c5cd-d5a1-4f43-bdd2-b4f8e4281f53.png', caption: '3D Scan Process' },
-    { image: '/lovable-uploads/b36a9abe-94d8-4d84-bfc4-8cfa96f50a54.png', caption: 'Custom Aligners' },
-    { image: '/lovable-uploads/f5f56c66-3af5-4799-8c25-992c6ef7417c.png', caption: 'Final Transformation' }
+    { 
+      image: '/lovable-uploads/299453f5-63b1-4193-8164-955b3504b4b8.png', 
+      caption: 'Detailed Digital Scan',
+      description: 'Advanced 3D scanning technology captures every detail of your teeth alignment'
+    },
+    { 
+      image: '/lovable-uploads/9ca20df0-a984-4c24-bec5-dfa24a26b9ff.png', 
+      caption: 'Custom Clear Aligners',
+      description: 'Your personalised Invisalign aligners are precisely crafted for your treatment'
+    }
   ];
 
   const benefits = [
@@ -107,7 +114,7 @@ const InvisalignBraces = () => {
                       alt="Invisalign aligners"
                       className="w-full h-full object-cover rounded-lg"
                     />
-                    <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/20 rounded-lg">
                       <button 
                         onClick={handleVideoPlay}
                         className="w-20 h-20 bg-[#63316b] rounded-full flex items-center justify-center hover:bg-[#63316b]/90 transition-all duration-300 group shadow-lg"
@@ -148,11 +155,16 @@ const InvisalignBraces = () => {
                 <img 
                   src={journeySteps[currentSlide].image} 
                   alt={journeySteps[currentSlide].caption}
-                  className="w-full h-80 object-cover rounded-lg mb-4"
+                  className="w-full h-80 object-cover rounded-lg mb-6"
                 />
-                <h3 className="text-2xl font-semibold text-[#63316b] text-center">
-                  {journeySteps[currentSlide].caption}
-                </h3>
+                <div className="text-center">
+                  <h3 className="text-2xl font-semibold text-[#63316b] mb-3">
+                    {journeySteps[currentSlide].caption}
+                  </h3>
+                  <p className="text-gray-600">
+                    {journeySteps[currentSlide].description}
+                  </p>
+                </div>
               </div>
             </div>
             
@@ -168,6 +180,19 @@ const InvisalignBraces = () => {
             >
               <ChevronRight className="w-6 h-6 text-gray-600" />
             </button>
+            
+            {/* Slide indicators */}
+            <div className="flex justify-center mt-6 space-x-2">
+              {journeySteps.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-colors ${
+                    index === currentSlide ? 'bg-[#63316b]' : 'bg-gray-300'
+                  }`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
