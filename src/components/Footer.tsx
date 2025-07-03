@@ -20,12 +20,11 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative bg-gradient-to-br from-[#63316b] via-[#63316b]/95 to-[#63316b]/90 text-white overflow-hidden">
-      {/* Glassmorphism Background Elements */}
+    <footer className="relative bg-[#63316b] text-white overflow-hidden">
+      {/* Subtle Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-96 h-96 glass bg-white/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 glass bg-white/5 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 glass bg-white/3 rounded-full blur-2xl"></div>
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -33,7 +32,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-1 space-y-6">
             <Link to="/" className="flex items-center space-x-3">
-              <div className="w-12 h-12 glass bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/20">
+              <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center border border-white/20">
                 <img 
                   src="/lovable-uploads/a149de9b-ffc7-4ccb-89c6-45a712d8505a.png" 
                   alt="Coventry Road Dentalcare" 
@@ -51,23 +50,23 @@ const Footer = () => {
             </p>
             
             {/* Awards & Recognition */}
-            <div className="flex items-center space-x-2 text-sm glass bg-white/10 backdrop-blur-sm rounded-xl p-3 border border-white/20">
-              <Star className="w-4 h-4 text-yellow-400 fill-current" />
+            <div className="flex items-center space-x-2 text-sm bg-white/10 rounded-xl p-3 border border-white/20">
+              <Star className="w-4 h-4 text-white fill-current" />
               <span className="text-white/90">Award-Winning Dental Practice</span>
             </div>
             
             {/* Social Media */}
             <div className="flex space-x-4">
-              <a href="#" className="w-12 h-12 glass bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center hover:bg-white/20 transition-all duration-300 hover:scale-110 group border border-white/20">
+              <a href="#" className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center hover:bg-white/20 transition-all duration-300 hover:scale-110 group border border-white/20">
                 <Facebook className="w-5 h-5 group-hover:scale-110 transition-transform" />
               </a>
-              <a href="#" className="w-12 h-12 glass bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center hover:bg-white/20 transition-all duration-300 hover:scale-110 group border border-white/20">
+              <a href="#" className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center hover:bg-white/20 transition-all duration-300 hover:scale-110 group border border-white/20">
                 <Twitter className="w-5 h-5 group-hover:scale-110 transition-transform" />
               </a>
-              <a href="#" className="w-12 h-12 glass bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center hover:bg-white/20 transition-all duration-300 hover:scale-110 group border border-white/20">
+              <a href="#" className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center hover:bg-white/20 transition-all duration-300 hover:scale-110 group border border-white/20">
                 <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform" />
               </a>
-              <a href="#" className="w-12 h-12 glass bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center hover:bg-white/20 transition-all duration-300 hover:scale-110 group border border-white/20">
+              <a href="#" className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center hover:bg-white/20 transition-all duration-300 hover:scale-110 group border border-white/20">
                 <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
               </a>
             </div>
@@ -110,7 +109,7 @@ const Footer = () => {
             <h4 className="font-semibold text-lg mb-6 text-white">Contact Information</h4>
             <div className="space-y-6">
               <div className="flex items-start space-x-3">
-                <div className="w-12 h-12 glass bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center flex-shrink-0 mt-1 border border-white/20">
+                <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center flex-shrink-0 mt-1 border border-white/20">
                   <MapPin className="w-5 h-5 text-white" />
                 </div>
                 <div className="text-white/80">
@@ -120,7 +119,7 @@ const Footer = () => {
               </div>
               
               <div className="flex items-start space-x-3">
-                <div className="w-12 h-12 glass bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center flex-shrink-0 border border-white/20">
+                <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center flex-shrink-0 border border-white/20">
                   <Phone className="w-5 h-5 text-white" />
                 </div>
                 <div className="text-white/80">
@@ -131,7 +130,7 @@ const Footer = () => {
               </div>
               
               <div className="flex items-start space-x-3">
-                <div className="w-12 h-12 glass bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center flex-shrink-0 border border-white/20">
+                <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center flex-shrink-0 border border-white/20">
                   <Mail className="w-5 h-5 text-white" />
                 </div>
                 <div className="text-white/80">
@@ -142,7 +141,7 @@ const Footer = () => {
             </div>
             
             {/* Opening Hours */}
-            <div className="mt-8 glass bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20">
+            <div className="mt-8 bg-white/10 rounded-2xl p-4 border border-white/20">
               <h5 className="font-medium text-white mb-3">Opening Hours</h5>
               <div className="text-sm text-white/80 space-y-1">
                 <div className="flex justify-between">
