@@ -25,13 +25,11 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-[#63316b] rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">C</span>
-              </div>
-              <div className="hidden sm:block">
-                <span className="text-xl font-semibold text-gray-900">Coventry Road</span>
-                <div className="text-xs text-gray-500 font-medium">Dentalcare</div>
-              </div>
+              <img 
+                src="/lovable-uploads/a149de9b-ffc7-4ccb-89c6-45a712d8505a.png" 
+                alt="Coventry Road Dentalcare" 
+                className="h-10 w-auto"
+              />
             </Link>
           </div>
 
