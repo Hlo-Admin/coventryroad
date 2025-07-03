@@ -1,4 +1,3 @@
-
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
@@ -10,58 +9,50 @@ const ServiceTiles = () => {
     {
       title: "Full Arch Implants",
       description: "Complete smile restoration in one day",
-      image: "/lovable-uploads/b3719a1c-237e-40d0-9e7a-b224c1dcd1d6.png",
-      path: "/full-arch-implants",
-      gradient: "from-[#63316b] to-purple-600"
+      image: "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      path: "/full-arch-implants"
     },
     {
       title: "Composite Bonding", 
       description: "Natural-looking tooth restoration",
-      image: "/lovable-uploads/ae0893e2-a6ea-4235-9a36-845cce3bbe67.png",
-      path: "/composite-bonding",
-      gradient: "from-[#63316b] to-pink-600"
+      image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      path: "/composite-bonding"
     },
     {
       title: "Invisalign Braces",
       description: "Invisible teeth straightening",
-      image: "/lovable-uploads/9ca20df0-a984-4c24-bec5-dfa24a26b9ff.png",
-      path: "/invisalign-braces",
-      gradient: "from-[#63316b] to-indigo-600"
+      image: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      path: "/invisalign-braces"
     },
     {
       title: "Teeth Whitening",
       description: "Brighter, whiter smile",
-      image: "/lovable-uploads/6ea5a8aa-7b9b-4b0a-a3ff-ba1823a3dfeb.png",
-      path: "/teeth-whitening",
-      gradient: "from-[#63316b] to-yellow-500"
+      image: "https://images.unsplash.com/photo-1559059997-4dec6d5d2d90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      path: "/teeth-whitening"
     },
     {
       title: "Veneers",
       description: "Transform with porcelain shells",
-      image: "/lovable-uploads/69f725c9-fe56-4589-ba0f-98a1066a2646.png",
-      path: "/veneers",
-      gradient: "from-[#63316b] to-teal-600"
+      image: "https://images.unsplash.com/photo-1643326885857-4e6dc2d10a3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      path: "/veneers"
     },
     {
       title: "Dental Implants",
       description: "Permanent tooth replacement",
-      image: "/lovable-uploads/b025e17d-dffe-4d21-b83f-005975eaf587.png",
-      path: "/dental-implants",
-      gradient: "from-[#63316b] to-green-600"
+      image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      path: "/dental-implants"
     },
     {
       title: "Dentures",
       description: "Comfortable removable teeth",
-      image: "/lovable-uploads/ae0893e2-a6ea-4235-9a36-845cce3bbe67.png",
-      path: "/dentures",
-      gradient: "from-[#63316b] to-orange-600"
+      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      path: "/dentures"
     },
     {
       title: "White Fillings",
       description: "Mercury-free natural fillings",
-      image: "/lovable-uploads/6ea5a8aa-7b9b-4b0a-a3ff-ba1823a3dfeb.png",
-      path: "/white-fillings",
-      gradient: "from-[#63316b] to-cyan-600"
+      image: "https://images.unsplash.com/photo-1588776814053-c2b8b7a8e2a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      path: "/white-fillings"
     }
   ];
 
@@ -126,23 +117,23 @@ const ServiceTiles = () => {
               to={service.path}
               className="group flex-none w-80"
             >
-              <div className={`relative overflow-hidden bg-gradient-to-br ${service.gradient} rounded-2xl text-white hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-white/20`}>
+              <div className="relative overflow-hidden bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-200">
                 {/* Background Image */}
-                <div className="absolute inset-0 opacity-20">
+                <div className="h-48 overflow-hidden">
                   <img 
                     src={service.image} 
                     alt={service.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 
                 {/* Content */}
-                <div className="relative p-6 bg-gradient-to-br from-black/40 to-transparent">
-                  <div className="flex items-center justify-end mb-4">
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-xl font-bold text-gray-900">{service.title}</h3>
+                    <ArrowRight className="w-5 h-5 text-[#63316b] group-hover:translate-x-1 transition-transform" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-                  <p className="text-white/90 text-sm">{service.description}</p>
+                  <p className="text-gray-600 text-sm">{service.description}</p>
                 </div>
               </div>
             </Link>
