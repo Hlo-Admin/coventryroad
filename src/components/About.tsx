@@ -1,7 +1,12 @@
 
-import { Award, Heart, Users, MapPin, Phone, Calendar } from 'lucide-react';
+import { Award, Heart, Users, MapPin, Phone, Calendar, CheckCircle, Shield } from 'lucide-react';
+import { useEffect } from 'react';
 
 const About = () => {
+  useEffect(() => {
+    document.title = "About Us - Coventry Road Dental Care | Expert Dental Team Birmingham";
+  }, []);
+
   return (
     <section id="about" className="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -38,26 +43,38 @@ const About = () => {
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="glass p-6 rounded-2xl">
-              <h4 className="text-xl font-semibold text-[#63316b] mb-3">🫶 Human-first approach</h4>
+              <div className="flex items-center mb-3">
+                <Heart className="w-6 h-6 text-[#63316b] mr-3" />
+                <h4 className="text-xl font-semibold text-[#63316b]">Human-first approach</h4>
+              </div>
               <p className="text-gray-700">
                 From kids to grandparents, nervous patients to routine checkups — you'll always feel 
                 seen, heard, and cared for.
               </p>
             </div>
             <div className="glass p-6 rounded-2xl">
-              <h4 className="text-xl font-semibold text-[#63316b] mb-3">💡 Transparent, tailored care</h4>
+              <div className="flex items-center mb-3">
+                <Shield className="w-6 h-6 text-[#63316b] mr-3" />
+                <h4 className="text-xl font-semibold text-[#63316b]">Transparent, tailored care</h4>
+              </div>
               <p className="text-gray-700">
                 We offer treatment options that suit your goals and your budget — nothing more, nothing less.
               </p>
             </div>
             <div className="glass p-6 rounded-2xl">
-              <h4 className="text-xl font-semibold text-[#63316b] mb-3">🦷 NHS & Private Flexibility</h4>
+              <div className="flex items-center mb-3">
+                <CheckCircle className="w-6 h-6 text-[#63316b] mr-3" />
+                <h4 className="text-xl font-semibold text-[#63316b]">NHS & Private Flexibility</h4>
+              </div>
               <p className="text-gray-700">
                 We combine essential NHS treatments with premium private options — for care that fits your lifestyle.
               </p>
             </div>
             <div className="glass p-6 rounded-2xl">
-              <h4 className="text-xl font-semibold text-[#63316b] mb-3">📍 12 State-of-the-Art Surgeries</h4>
+              <div className="flex items-center mb-3">
+                <MapPin className="w-6 h-6 text-[#63316b] mr-3" />
+                <h4 className="text-xl font-semibold text-[#63316b]">12 State-of-the-Art Surgeries</h4>
+              </div>
               <p className="text-gray-700">
                 Modern equipment. Clean, calming environments. A place where smiles happen — every day.
               </p>
@@ -86,11 +103,14 @@ const About = () => {
 
         {/* Our Mission */}
         <div className="mb-16 glass p-8 rounded-3xl">
-          <h3 className="text-2xl font-bold text-gray-900 mb-6">🌱 Our Mission</h3>
+          <div className="flex items-center mb-6">
+            <Heart className="w-8 h-8 text-[#63316b] mr-3" />
+            <h3 className="text-2xl font-bold text-gray-900">Our Mission</h3>
+          </div>
           <ul className="space-y-4 text-lg text-gray-700">
-            <li>• To create healthy, confident smiles</li>
-            <li>• To provide dental care that feels personal</li>
-            <li>• To make Coventry feel at home in our clinic</li>
+            <li className="flex items-center"><CheckCircle className="w-5 h-5 text-[#63316b] mr-3" />To create healthy, confident smiles</li>
+            <li className="flex items-center"><CheckCircle className="w-5 h-5 text-[#63316b] mr-3" />To provide dental care that feels personal</li>
+            <li className="flex items-center"><CheckCircle className="w-5 h-5 text-[#63316b] mr-3" />To make Coventry feel at home in our clinic</li>
           </ul>
           <p className="text-lg text-gray-700 mt-6">
             Whether you need a routine check-up, a smile makeover, or help overcoming dental anxiety — 
@@ -100,7 +120,10 @@ const About = () => {
 
         {/* Meet Our Team */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8">👩‍⚕️ Meet Our Team</h3>
+          <div className="flex items-center mb-8">
+            <Users className="w-8 h-8 text-[#63316b] mr-3" />
+            <h3 className="text-2xl font-bold text-gray-900">Meet Our Team</h3>
+          </div>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="glass p-6 rounded-2xl text-center">
               <h4 className="text-xl font-semibold text-[#63316b] mb-2">Dr. Anoop Deol</h4>
@@ -123,74 +146,46 @@ const About = () => {
 
         {/* What Our Patients Love */}
         <div className="mb-16 glass p-8 rounded-3xl">
-          <h3 className="text-2xl font-bold text-gray-900 mb-6">💬 What Our Patients Love</h3>
+          <div className="flex items-center mb-6">
+            <Heart className="w-8 h-8 text-[#63316b] mr-3" />
+            <h3 className="text-2xl font-bold text-gray-900">What Our Patients Love</h3>
+          </div>
           <div className="grid md:grid-cols-2 gap-4">
             <div className="flex items-center space-x-3">
-              <span className="text-green-500 text-xl">✅</span>
+              <CheckCircle className="w-5 h-5 text-green-500" />
               <span className="text-gray-700">Family-friendly and welcoming</span>
             </div>
             <div className="flex items-center space-x-3">
-              <span className="text-green-500 text-xl">✅</span>
+              <CheckCircle className="w-5 h-5 text-green-500" />
               <span className="text-gray-700">Gentle with nervous patients</span>
             </div>
             <div className="flex items-center space-x-3">
-              <span className="text-green-500 text-xl">✅</span>
+              <CheckCircle className="w-5 h-5 text-green-500" />
               <span className="text-gray-700">Full treatment range under one roof</span>
             </div>
             <div className="flex items-center space-x-3">
-              <span className="text-green-500 text-xl">✅</span>
+              <CheckCircle className="w-5 h-5 text-green-500" />
               <span className="text-gray-700">Transparent pricing, honest advice</span>
             </div>
             <div className="flex items-center space-x-3">
-              <span className="text-green-500 text-xl">✅</span>
+              <CheckCircle className="w-5 h-5 text-green-500" />
               <span className="text-gray-700">Flexible NHS & private plans</span>
             </div>
             <div className="flex items-center space-x-3">
-              <span className="text-green-500 text-xl">✅</span>
+              <CheckCircle className="w-5 h-5 text-green-500" />
               <span className="text-gray-700">Advanced smile care (implants, Invisalign, veneers & more)</span>
-            </div>
-          </div>
-        </div>
-
-        {/* FAQ Section */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8">🙋 Frequently Asked Questions</h3>
-          <div className="space-y-6">
-            <div className="glass p-6 rounded-2xl">
-              <h4 className="text-lg font-semibold text-[#63316b] mb-3">
-                Do you offer new patient appointments?
-              </h4>
-              <p className="text-gray-700">
-                Yes! We welcome new patients with a 20-minute comprehensive consultation. 
-                Call us at 02476 312256 to book.
-              </p>
-            </div>
-            <div className="glass p-6 rounded-2xl">
-              <h4 className="text-lg font-semibold text-[#63316b] mb-3">
-                Can you help if I'm anxious about visiting?
-              </h4>
-              <p className="text-gray-700">
-                Absolutely. We're experienced in supporting nervous patients with empathy, 
-                calming communication, and gentle care. Your comfort is always our priority.
-              </p>
-            </div>
-            <div className="glass p-6 rounded-2xl">
-              <h4 className="text-lg font-semibold text-[#63316b] mb-3">
-                What treatments do you offer?
-              </h4>
-              <p className="text-gray-700">
-                From general and preventive care to complex cosmetic and implant dentistry — 
-                we offer a full spectrum of dental treatments.
-              </p>
             </div>
           </div>
         </div>
 
         {/* Ready to Join */}
         <div className="text-center glass p-12 rounded-3xl">
-          <h3 className="text-3xl font-bold text-gray-900 mb-6">
-            📞 Ready to Join a Dental Family That Cares?
-          </h3>
+          <div className="flex items-center justify-center mb-6">
+            <Phone className="w-8 h-8 text-[#63316b] mr-3" />
+            <h3 className="text-3xl font-bold text-gray-900">
+              Ready to Join a Dental Family That Cares?
+            </h3>
+          </div>
           <p className="text-lg text-gray-700 mb-8">
             Whether it's your first visit or your 50th, we're here to make every experience 
             warm, professional, and personalised.
@@ -203,9 +198,12 @@ const About = () => {
               Request a Callback
             </button>
           </div>
-          <p className="text-gray-600 mt-6">
-            📍 Coventry Road Dental Care – Your smile starts here.
-          </p>
+          <div className="flex items-center justify-center mt-6">
+            <MapPin className="w-5 h-5 text-gray-600 mr-2" />
+            <p className="text-gray-600">
+              Coventry Road Dental Care – Your smile starts here.
+            </p>
+          </div>
         </div>
       </div>
     </section>

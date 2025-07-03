@@ -1,11 +1,19 @@
 
 import { Phone, Calendar, CheckCircle, Users, Award, Star, Shield, Heart, Wrench, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import ServiceTiles from '../components/ServiceTiles';
+import FloatingBubble from '../components/FloatingBubble';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 const Dentures = () => {
+  useEffect(() => {
+    document.title = "Dentures - Comfortable Tooth Replacement | Coventry Road Dental Care";
+    window.scrollTo(0, 0);
+  }, []);
+
   const benefits = [
     {
       icon: <CheckCircle className="w-6 h-6 text-[#63316b]" />,
@@ -81,27 +89,42 @@ const Dentures = () => {
     <>
       <Header />
       <div className="min-h-screen pt-16">
-        {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-gray-50 to-white py-20 lg:py-32 overflow-hidden">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center opacity-10"></div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6 animate-fadeInUp">
-                Restore Your Smile with{' '}
-                <span className="text-[#63316b]">Dentures</span> in Coventry
-              </h1>
-              <p className="text-xl lg:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto animate-fadeInUp">
-                Tailored solutions that fit comfortably, look natural, and bring back confidence in your everyday life.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp">
-                <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
-                  <Phone className="w-5 h-5" />
-                  <span>Request a Callback</span>
-                </button>
-                <button className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2">
-                  <Calendar className="w-5 h-5" />
-                  <span>Book a Free Denture Consultation</span>
-                </button>
+        {/* Hero Section - Minimal with 3D Object */}
+        <section className="relative min-h-screen bg-gradient-to-br from-gray-50 to-white overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-screen flex items-center">
+            <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
+              {/* Left Content */}
+              <div className="space-y-8">
+                <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                  Restore Your Smile with
+                  <span className="text-[#63316b] block">Dentures</span>
+                </h1>
+                <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed">
+                  Tailored solutions that fit comfortably, look natural, and bring back confidence in your everyday life.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
+                    <Phone className="w-5 h-5" />
+                    <span>Request a Callback</span>
+                  </button>
+                  <button className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2">
+                    <Calendar className="w-5 h-5" />
+                    <span>Book Free Consultation</span>
+                  </button>
+                </div>
+              </div>
+              
+              {/* Right 3D Object Placeholder */}
+              <div className="flex justify-center items-center">
+                <div className="w-96 h-96 glass bg-gradient-to-br from-[#63316b]/10 to-purple-100 rounded-3xl flex items-center justify-center border border-white/20 shadow-2xl">
+                  <div className="text-center">
+                    <div className="w-24 h-24 bg-[#63316b]/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Wrench className="w-12 h-12 text-[#63316b]" />
+                    </div>
+                    <p className="text-[#63316b] font-medium">3D Denture Model</p>
+                    <p className="text-gray-600 text-sm">Interactive visualization</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -225,17 +248,8 @@ const Dentures = () => {
           </div>
         </section>
 
-        {/* Fixed Option Highlight */}
-        <section className="py-16 bg-gradient-to-r from-[#63316b]/5 to-[#63316b]/10">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
-              Not a fan of removable dentures?
-            </h3>
-            <p className="text-lg text-gray-600 mb-6">
-              Ask us about implant-supported dentures — a more secure and lasting alternative that combines the stability of implants with the versatility of dentures.
-            </p>
-          </div>
-        </section>
+        {/* Service Tiles */}
+        <ServiceTiles />
 
         {/* Final CTA Section */}
         <section className="py-16 bg-gradient-to-r from-[#63316b] to-[#63316b]/90 text-white">
@@ -256,6 +270,7 @@ const Dentures = () => {
           </div>
         </section>
       </div>
+      <FloatingBubble />
       <Footer />
     </>
   );

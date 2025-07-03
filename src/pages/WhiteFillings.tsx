@@ -1,11 +1,18 @@
-
 import { Phone, Calendar, Shield, Heart, CheckCircle, Palette, Sparkles, User, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import ServiceTiles from '../components/ServiceTiles';
+import FloatingBubble from '../components/FloatingBubble';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 const WhiteFillings = () => {
+  useEffect(() => {
+    document.title = "White Fillings - Mercury-Free Dental Fillings | Coventry Road Dental Care";
+    window.scrollTo(0, 0);
+  }, []);
+
   const benefits = [
     {
       icon: <Palette className="w-6 h-6 text-[#63316b]" />,
@@ -210,6 +217,9 @@ const WhiteFillings = () => {
           </div>
         </section>
 
+        {/* Service Tiles */}
+        <ServiceTiles />
+
         {/* Closing Section */}
         <section className="py-16 bg-gradient-to-r from-gray-50 to-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -231,22 +241,8 @@ const WhiteFillings = () => {
             </div>
           </div>
         </section>
-
-        {/* Standardized Floating CTA Bubble */}
-        <div className="fixed bottom-6 right-6 z-50">
-          <button className="glass bg-[#63316b]/90 backdrop-blur-sm text-white p-4 rounded-full shadow-xl hover:bg-[#63316b] transition-all duration-300 group border border-white/20">
-            <MessageCircle className="w-6 h-6 group-hover:scale-110 transition-transform" />
-          </button>
-          <div className="absolute bottom-16 right-0 glass bg-white/95 backdrop-blur-sm rounded-xl shadow-xl p-4 w-64 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none border border-white/20">
-            <p className="text-sm font-medium text-gray-900 mb-2">
-              Ready to transform your smile?
-            </p>
-            <p className="text-xs text-gray-600">
-              Chat with our dental experts today.
-            </p>
-          </div>
-        </div>
       </div>
+      <FloatingBubble />
       <Footer />
     </>
   );

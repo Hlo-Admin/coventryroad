@@ -1,11 +1,18 @@
-
 import { ArrowRight, Phone, Calendar, CheckCircle, Sparkles, Smile, Shield, DollarSign, Syringe, Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import ServiceTiles from '../components/ServiceTiles';
+import FloatingBubble from '../components/FloatingBubble';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 const Veneers = () => {
+  useEffect(() => {
+    document.title = "Porcelain Veneers - Transform Your Smile | Coventry Road Dental Care";
+    window.scrollTo(0, 0);
+  }, []);
+
   const benefits = [
     {
       icon: <Sparkles className="w-6 h-6 text-[#63316b]" />,
@@ -218,6 +225,9 @@ const Veneers = () => {
           </div>
         </section>
 
+        {/* Service Tiles */}
+        <ServiceTiles />
+
         {/* Final CTA Section */}
         <section className="py-16 bg-gradient-to-r from-[#63316b] to-[#63316b]/90 text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -242,6 +252,7 @@ const Veneers = () => {
           </div>
         </section>
       </div>
+      <FloatingBubble />
       <Footer />
     </>
   );

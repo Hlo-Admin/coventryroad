@@ -103,6 +103,16 @@ All colors MUST be HSL.
   }
 }
 
+/* Hide scrollbars */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* Enhanced Glassmorphism Effects */
 .glass {
   background: rgba(255, 255, 255, 0.1);
