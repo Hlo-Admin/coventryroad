@@ -1,5 +1,4 @@
-
-import { ArrowRight, Phone, Calendar, CheckCircle, Star, Sparkles, Home, Users, Clock, DollarSign, RefreshCw, Zap } from 'lucide-react';
+import { ArrowRight, Phone, Calendar, CheckCircle, Star, Sparkles, Home, Users, Clock, DollarSign, RefreshCw, Zap, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -112,27 +111,45 @@ const TeethWhitening = () => {
     <>
       <Header />
       <div className="min-h-screen pt-16">
-        {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-gray-50 to-white py-20 lg:py-32 overflow-hidden">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center opacity-10"></div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6 animate-fadeInUp">
-                Brighten Your Smile with{' '}
-                <span className="text-[#63316b]">Teeth Whitening</span> in Coventry
-              </h1>
-              <p className="text-xl lg:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto animate-fadeInUp">
-                Safe. Professional. Pain-free. Done from the comfort of your home.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp">
-                <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
-                  <Phone className="w-5 h-5" />
-                  <span>Request a Callback</span>
-                </button>
-                <button className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2">
-                  <Calendar className="w-5 h-5" />
-                  <span>Book My Free Consultation</span>
-                </button>
+        {/* Hero Section - Unified structure */}
+        <section className="relative min-h-screen bg-gradient-to-br from-gray-50 to-white overflow-hidden">
+          <div className="absolute inset-0">
+            <div className="absolute top-1/4 right-0 w-96 h-96 bg-[#63316b]/5 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-[#63316b]/5 rounded-full blur-3xl"></div>
+          </div>
+          
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
+            <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+              {/* Content - Left Side */}
+              <div className="space-y-8">
+                <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                  Brighten Your Smile with{' '}
+                  <span className="text-[#63316b]">Teeth Whitening</span> in Coventry
+                </h1>
+                <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed">
+                  Safe. Professional. Pain-free. Done from the comfort of your home.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
+                    <Phone className="w-5 h-5" />
+                    <span>Request a Callback</span>
+                  </button>
+                  <button className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2">
+                    <Calendar className="w-5 h-5" />
+                    <span>Book My Free Consultation</span>
+                  </button>
+                </div>
+              </div>
+              
+              {/* Hero Image - Right Side */}
+              <div className="relative">
+                <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl">
+                  <img 
+                    src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&h=600&fit=crop" 
+                    alt="Professional teeth whitening results"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -310,6 +327,21 @@ const TeethWhitening = () => {
         </section>
       </div>
       <Footer />
+      
+      {/* Standardized Floating CTA Bubble */}
+      <div className="fixed bottom-6 right-6 z-50">
+        <button className="bg-[#63316b] text-white p-4 rounded-full shadow-lg hover:bg-[#63316b]/90 transition-all duration-300 group">
+          <MessageCircle className="w-6 h-6 group-hover:scale-110 transition-transform" />
+        </button>
+        <div className="absolute bottom-16 right-0 bg-white rounded-lg shadow-lg p-4 w-64 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+          <p className="text-sm font-medium text-gray-900 mb-2">
+            Ready to brighten your smile?
+          </p>
+          <p className="text-xs text-gray-600">
+            Chat with us about professional teeth whitening options.
+          </p>
+        </div>
+      </div>
     </>
   );
 };
