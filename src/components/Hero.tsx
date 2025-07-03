@@ -1,119 +1,98 @@
-
 import { ArrowRight, Play, CheckCircle, Users, Award, Star } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center bg-gradient-to-br from-gray-50 to-white overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 to-white">
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-indigo-100 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-float"></div>
-        <div className="absolute top-40 right-10 w-72 h-72 bg-purple-100 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-float" style={{animationDelay: '2s'}}></div>
-        <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-100 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-float" style={{animationDelay: '4s'}}></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#63316b]/10 rounded-full mix-blend-multiply filter blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#63316b]/5 rounded-full mix-blend-multiply filter blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left Content */}
-          <div className="space-y-8">
-            {/* Badge */}
-            <div className="inline-flex items-center space-x-2 bg-white/70 backdrop-blur-sm border border-indigo-200 text-indigo-700 px-4 py-2 rounded-full text-sm font-medium animate-fadeInUp">
-              <Star className="w-4 h-4 fill-current" />
-              <span>Trusted by 2000+ Happy Patients</span>
-            </div>
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="text-center">
+          {/* Badge */}
+          <div className="inline-flex items-center space-x-2 bg-[#63316b]/10 text-[#63316b] px-4 py-2 rounded-full text-sm font-medium mb-8 animate-fadeInUp">
+            <span className="w-2 h-2 bg-[#63316b] rounded-full animate-pulse"></span>
+            <span>Premium Dental Care in Birmingham</span>
+          </div>
+
+          {/* Main Heading */}
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-tight animate-fadeInUp" style={{ animationDelay: '0.1s' }}>
+            Your Perfect Smile
+            <span className="block text-[#63316b]">Starts Here</span>
+          </h1>
+
+          {/* Subheading */}
+          <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
+            Experience exceptional dental care with our state-of-the-art treatments and compassionate approach. We're committed to giving you the confidence that comes with a healthy, beautiful smile.
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fadeInUp" style={{ animationDelay: '0.3s' }}>
+            <button className="bg-[#63316b] text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#63316b]/90 transform hover:-translate-y-1 hover:shadow-xl transition-all duration-300 inline-flex items-center space-x-3 group">
+              <span>Book Your Consultation</span>
+              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </button>
             
-            {/* Main Heading */}
-            <div className="space-y-6 animate-slideInLeft">
-              <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 leading-tight">
-                Premium
-                <span className="block text-gradient">Dental Care</span>
-                <span className="text-4xl lg:text-5xl text-gray-600">in Birmingham</span>
-              </h1>
-              
-              <p className="text-xl text-gray-600 leading-relaxed max-w-xl">
-                Experience world-class dental treatments with our expert team. We combine advanced technology with personalized care to give you the perfect smile.
-              </p>
-            </div>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4 animate-fadeInUp" style={{animationDelay: '0.3s'}}>
-              <button className="inline-flex items-center space-x-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-                <span>Book Consultation</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
-              
-              <button className="inline-flex items-center space-x-3 bg-white/80 backdrop-blur-sm border border-gray-200 text-gray-700 px-8 py-4 rounded-full font-semibold hover:bg-white hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
-                <div className="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center group-hover:bg-indigo-200 transition-colors">
-                  <Play className="w-4 h-4 text-indigo-600 ml-0.5" />
-                </div>
-                <span>Watch Our Story</span>
-              </button>
-            </div>
-
-            {/* Trust Indicators */}
-            <div className="grid grid-cols-3 gap-8 pt-12 border-t border-gray-200 animate-slideInLeft" style={{animationDelay: '0.6s'}}>
-              <div className="text-center">
-                <div className="flex items-center justify-center w-12 h-12 bg-indigo-100 rounded-xl mx-auto mb-3">
-                  <Users className="w-6 h-6 text-indigo-600" />
-                </div>
-                <div className="text-2xl font-bold text-gray-900">2000+</div>
-                <div className="text-sm text-gray-600">Happy Patients</div>
-              </div>
-              
-              <div className="text-center">
-                <div className="flex items-center justify-center w-12 h-12 bg-indigo-100 rounded-xl mx-auto mb-3">
-                  <Award className="w-6 h-6 text-indigo-600" />
-                </div>
-                <div className="text-2xl font-bold text-gray-900">15+</div>
-                <div className="text-sm text-gray-600">Years Experience</div>
-              </div>
-              
-              <div className="text-center">
-                <div className="flex items-center justify-center w-12 h-12 bg-indigo-100 rounded-xl mx-auto mb-3">
-                  <Star className="w-6 h-6 text-indigo-600 fill-current" />
-                </div>
-                <div className="text-2xl font-bold text-gray-900">4.9</div>
-                <div className="text-sm text-gray-600">Average Rating</div>
-              </div>
-            </div>
+            <button className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#63316b] hover:text-white transform hover:-translate-y-1 transition-all duration-300 inline-flex items-center space-x-3">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              <span>Call (024) 7699 2020</span>
+            </button>
           </div>
 
-          {/* Right Content - Image */}
-          <div className="relative animate-slideInRight">
-            <div className="relative">
-              <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl">
-                <img
-                  src="https://images.unsplash.com/photo-1629909613869-adb7a1b272fd?w=600&h=600&fit=crop&crop=center"
-                  alt="Modern dental clinic interior"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              
-              {/* Floating Cards */}
-              <div className="absolute -top-6 -left-6 bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-white/20 animate-scaleIn" style={{animationDelay: '1s'}}>
-                <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-                    <CheckCircle className="w-6 h-6 text-green-600" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-gray-900">99% Success Rate</div>
-                    <div className="text-sm text-gray-600">Treatment Success</div>
-                  </div>
+          {/* Trust Indicators */}
+          <div className="mt-16 animate-fadeInUp" style={{ animationDelay: '0.4s' }}>
+            <div className="flex flex-col sm:flex-row items-center justify-center space-y-6 sm:space-y-0 sm:space-x-12 text-gray-600">
+              <div className="flex items-center space-x-3">
+                <div className="w-12 h-12 bg-[#63316b]/10 rounded-full flex items-center justify-center">
+                  <svg className="w-6 h-6 text-[#63316b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-900">15+ Years</div>
+                  <div className="text-sm">of Excellence</div>
                 </div>
               </div>
               
-              <div className="absolute -bottom-6 -right-6 bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-white/20 animate-scaleIn" style={{animationDelay: '1.3s'}}>
-                <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center">
-                    <Award className="w-6 h-6 text-indigo-600" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-gray-900">Award Winning</div>
-                    <div className="text-sm text-gray-600">Best Dental Clinic 2023</div>
-                  </div>
+              <div className="flex items-center space-x-3">
+                <div className="w-12 h-12 bg-[#63316b]/10 rounded-full flex items-center justify-center">
+                  <svg className="w-6 h-6 text-[#63316b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-900">Birmingham</div>
+                  <div className="text-sm">Based Practice</div>
+                </div>
+              </div>
+              
+              <div className="flex items-center space-x-3">
+                <div className="w-12 h-12 bg-[#63316b]/10 rounded-full flex items-center justify-center">
+                  <svg className="w-6 h-6 text-[#63316b]" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                  </svg>
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-900">5-Star</div>
+                  <div className="text-sm">Patient Reviews</div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="w-6 h-10 border-2 border-[#63316b] rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-[#63316b] rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
     </section>

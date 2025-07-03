@@ -4,46 +4,52 @@ import { Shield, Sparkles, Heart, Zap, Clock, Award, ArrowRight } from 'lucide-r
 const Services = () => {
   const services = [
     {
-      icon: Shield,
-      title: "General Dentistry",
-      description: "Comprehensive oral health care including cleanings, fillings, and preventive treatments.",
-      features: ["Regular Check-ups", "Professional Cleaning", "Cavity Treatment", "Gum Disease Prevention"],
-      color: "from-blue-500 to-blue-600"
+      title: "Full Arch Implants",
+      description: "Complete smile restoration with permanent, natural-looking teeth in just one day.",
+      image: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=400&h=300&fit=crop",
+      path: "/full-arch-implants"
     },
     {
-      icon: Sparkles,
-      title: "Cosmetic Dentistry",
-      description: "Transform your smile with our advanced cosmetic treatments and smile makeovers.",
-      features: ["Teeth Whitening", "Porcelain Veneers", "Smile Design", "Aesthetic Bonding"],
-      color: "from-purple-500 to-purple-600"
+      title: "Composite Bonding", 
+      description: "Transform your smile with natural-looking tooth-colored resin in a single visit.",
+      image: "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=400&h=300&fit=crop",
+      path: "/composite-bonding"
     },
     {
-      icon: Heart,
-      title: "Orthodontics",
-      description: "Straighten your teeth with modern orthodontic solutions for all ages.",
-      features: ["Invisalign Treatment", "Traditional Braces", "Clear Aligners", "Bite Correction"],
-      color: "from-pink-500 to-pink-600"
+      title: "Invisalign Braces",
+      description: "Straighten your teeth discreetly with virtually invisible, removable aligners.",
+      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
+      path: "/invisalign-braces"
     },
     {
-      icon: Zap,
-      title: "Emergency Care",
-      description: "Immediate dental care when you need it most, available 24/7 for urgent situations.",
-      features: ["24/7 Emergency Line", "Same-day Treatment", "Pain Management", "Urgent Repairs"],
-      color: "from-orange-500 to-orange-600"
+      title: "Teeth Whitening",
+      description: "Achieve a brighter, more confident smile with professional whitening treatments.",
+      image: "https://images.unsplash.com/photo-1615729947596-a598e5de0ab3?w=400&h=300&fit=crop",
+      path: "/teeth-whitening"
     },
     {
-      icon: Clock,
-      title: "Preventive Care",
-      description: "Proactive approach to maintaining optimal oral health and preventing dental issues.",
-      features: ["Dental Examinations", "Digital X-rays", "Oral Cancer Screening", "Fluoride Treatment"],
-      color: "from-green-500 to-green-600"
+      title: "Veneers",
+      description: "Transform your smile with ultra-thin, custom-crafted porcelain shells.",
+      image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400&h=300&fit=crop",
+      path: "/veneers"
     },
     {
-      icon: Award,
-      title: "Restorative Care",
-      description: "Restore function and aesthetics with our comprehensive restorative treatments.",
-      features: ["Dental Implants", "Crowns & Bridges", "Root Canal Therapy", "Dentures"],
-      color: "from-indigo-500 to-indigo-600"
+      title: "Dental Implants",
+      description: "Permanent tooth replacement that looks, feels, and functions like natural teeth.",
+      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+      path: "/dental-implants"
+    },
+    {
+      title: "Dentures",
+      description: "Comfortable, natural-looking removable teeth replacement solutions.", 
+      image: "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=400&h=300&fit=crop",
+      path: "/dentures"
+    },
+    {
+      title: "White Fillings",
+      description: "Natural-looking, mercury-free composite fillings that blend seamlessly.",
+      image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400&h=300&fit=crop", 
+      path: "/white-fillings"
     }
   ];
 
@@ -58,14 +64,13 @@ const Services = () => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <div className="inline-flex items-center space-x-2 bg-indigo-100 text-indigo-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <Sparkles className="w-4 h-4" />
-            <span>Our Services</span>
+          <div className="inline-flex items-center space-x-2 bg-[#63316b]/10 text-[#63316b] px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <span>Our Treatments</span>
           </div>
           
           <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
-            Complete Dental
-            <span className="block text-gradient">Care Solutions</span>
+            We Provide Industry
+            <span className="block text-[#63316b]">Tailored Offerings For</span>
           </h2>
           
           <p className="text-xl text-gray-600 leading-relaxed">
@@ -76,68 +81,69 @@ const Services = () => {
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {services.map((service, index) => (
-            <div
+            <Link
               key={index}
-              className="group relative bg-white rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 hover:border-indigo-200 card-hover"
+              to={service.path}
+              className="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 hover:border-[#63316b]/20"
               style={{
                 animationDelay: `${index * 0.1}s`
               }}
             >
-              {/* Icon */}
-              <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r ${service.color} rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                <service.icon className="w-8 h-8 text-white" />
+              {/* Image */}
+              <div className="aspect-[4/3] overflow-hidden">
+                <img 
+                  src={service.image} 
+                  alt={service.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
               </div>
               
               {/* Content */}
-              <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-indigo-600 transition-colors">
-                {service.title}
-              </h3>
-              
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                {service.description}
-              </p>
-              
-              {/* Features */}
-              <div className="space-y-3 mb-6">
-                {service.features.map((feature, idx) => (
-                  <div key={idx} className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-indigo-500 rounded-full flex-shrink-0"></div>
-                    <span className="text-sm text-gray-700 font-medium">{feature}</span>
-                  </div>
-                ))}
+              <div className="p-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-[#63316b] transition-colors">
+                  {service.title}
+                </h3>
+                
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  {service.description}
+                </p>
+                
+                {/* CTA */}
+                <div className="inline-flex items-center space-x-2 text-[#63316b] font-semibold group/btn">
+                  <span>Learn More</span>
+                  <svg className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </div>
               </div>
-              
-              {/* CTA */}
-              <button className="inline-flex items-center space-x-2 text-indigo-600 font-semibold hover:text-indigo-700 transition-colors group/btn">
-                <span>Learn More</span>
-                <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-              </button>
 
               {/* Hover Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/0 to-purple-500/0 group-hover:from-indigo-500/5 group-hover:to-purple-500/5 rounded-3xl transition-all duration-500"></div>
-            </div>
+              <div className="absolute inset-0 bg-[#63316b]/0 group-hover:bg-[#63316b]/5 transition-all duration-500"></div>
+            </Link>
           ))}
         </div>
 
         {/* CTA Section */}
         <div className="relative">
-          <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-3xl p-12 lg:p-16 text-center text-white overflow-hidden">
+          <div className="bg-[#63316b] rounded-3xl p-12 lg:p-16 text-center text-white overflow-hidden">
             {/* Background Pattern */}
             <div className="absolute inset-0 bg-black/10"></div>
-            <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent"></div>
+            <div className="absolute inset-0 bg-white/5"></div>
             
             <div className="relative">
               <h3 className="text-3xl lg:text-4xl font-bold mb-4">
                 Ready to Transform Your Smile?
               </h3>
-              <p className="text-xl mb-8 text-indigo-100 max-w-2xl mx-auto">
+              <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
                 Book your comprehensive consultation today and discover how we can help you achieve the perfect smile you've always wanted.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="inline-flex items-center space-x-3 bg-white text-indigo-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
+                <button className="inline-flex items-center space-x-3 bg-white text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-gray-50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
                   <span>Schedule Consultation</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
                 </button>
                 
                 <button className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/20 transition-all duration-300">

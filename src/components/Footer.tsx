@@ -1,14 +1,17 @@
 
 import { MapPin, Phone, Mail, Facebook, Twitter, Instagram, Linkedin, Heart, Star } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
-  const services = [
-    "General Dentistry",
-    "Cosmetic Dentistry", 
-    "Orthodontics",
-    "Teeth Whitening",
-    "Dental Implants",
-    "Emergency Care"
+  const treatments = [
+    { name: 'Full Arch Implants', path: '/full-arch-implants' },
+    { name: 'Composite Bonding', path: '/composite-bonding' },
+    { name: 'Invisalign Braces', path: '/invisalign-braces' },
+    { name: 'Teeth Whitening', path: '/teeth-whitening' },
+    { name: 'Veneers', path: '/veneers' },
+    { name: 'Dental Implants', path: '/dental-implants' },
+    { name: 'Dentures', path: '/dentures' },
+    { name: 'White Fillings', path: '/white-fillings' }
   ];
 
   const quickLinks = [
@@ -24,23 +27,23 @@ const Footer = () => {
     <footer className="bg-gray-900 text-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-indigo-500/10 rounded-full mix-blend-multiply filter blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full mix-blend-multiply filter blur-3xl"></div>
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#63316b]/10 rounded-full mix-blend-multiply filter blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#63316b]/10 rounded-full mix-blend-multiply filter blur-3xl"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div className="lg:col-span-1 space-y-6">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center">
+            <Link to="/" className="flex items-center space-x-3">
+              <div className="w-10 h-10 bg-[#63316b] rounded-xl flex items-center justify-center">
                 <span className="text-white font-bold text-lg">C</span>
               </div>
               <div>
                 <h3 className="font-bold text-xl text-white">Coventry Road</h3>
-                <span className="text-sm text-indigo-300 font-medium">Dentalcare</span>
+                <span className="text-sm text-gray-300 font-medium">Dentalcare</span>
               </div>
-            </div>
+            </Link>
             
             <p className="text-gray-400 leading-relaxed">
               Providing exceptional dental care to Birmingham and surrounding areas since 2008. Your smile is our priority, and your health is our commitment.
@@ -54,16 +57,16 @@ const Footer = () => {
             
             {/* Social Media */}
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-indigo-600 transition-all duration-300 hover:scale-110 group">
+              <a href="#" className="w-10 h-10 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-[#63316b] transition-all duration-300 hover:scale-110 group">
                 <Facebook className="w-5 h-5 group-hover:scale-110 transition-transform" />
               </a>
-              <a href="#" className="w-10 h-10 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-indigo-600 transition-all duration-300 hover:scale-110 group">
+              <a href="#" className="w-10 h-10 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-[#63316b] transition-all duration-300 hover:scale-110 group">
                 <Twitter className="w-5 h-5 group-hover:scale-110 transition-transform" />
               </a>
-              <a href="#" className="w-10 h-10 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-indigo-600 transition-all duration-300 hover:scale-110 group">
+              <a href="#" className="w-10 h-10 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-[#63316b] transition-all duration-300 hover:scale-110 group">
                 <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform" />
               </a>
-              <a href="#" className="w-10 h-10 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-indigo-600 transition-all duration-300 hover:scale-110 group">
+              <a href="#" className="w-10 h-10 bg-gray-800 rounded-xl flex items-center justify-center hover:bg-[#63316b] transition-all duration-300 hover:scale-110 group">
                 <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
               </a>
             </div>
@@ -77,7 +80,7 @@ const Footer = () => {
                 <a 
                   key={index}
                   href="#" 
-                  className="block text-gray-400 hover:text-indigo-300 transition-colors duration-300 hover:translate-x-2 transform"
+                  className="block text-gray-400 hover:text-[#63316b] transition-colors duration-300 hover:translate-x-2 transform"
                 >
                   {link}
                 </a>
@@ -85,18 +88,18 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Services */}
+          {/* Our Treatments */}
           <div>
-            <h4 className="font-semibold text-lg mb-6 text-white">Our Services</h4>
+            <h4 className="font-semibold text-lg mb-6 text-white">Our Treatments</h4>
             <div className="space-y-4">
-              {services.map((service, index) => (
-                <a 
+              {treatments.map((treatment, index) => (
+                <Link 
                   key={index}
-                  href="#" 
-                  className="block text-gray-400 hover:text-indigo-300 transition-colors duration-300 hover:translate-x-2 transform"
+                  to={treatment.path} 
+                  className="block text-gray-400 hover:text-[#63316b] transition-colors duration-300 hover:translate-x-2 transform"
                 >
-                  {service}
-                </a>
+                  {treatment.name}
+                </Link>
               ))}
             </div>
           </div>
@@ -106,8 +109,8 @@ const Footer = () => {
             <h4 className="font-semibold text-lg mb-6 text-white">Contact Information</h4>
             <div className="space-y-6">
               <div className="flex items-start space-x-3">
-                <div className="w-10 h-10 bg-indigo-600/20 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
-                  <MapPin className="w-5 h-5 text-indigo-400" />
+                <div className="w-10 h-10 bg-[#63316b]/20 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+                  <MapPin className="w-5 h-5 text-[#63316b]" />
                 </div>
                 <div className="text-gray-400">
                   <p className="font-medium text-white mb-1">Visit Our Clinic</p>
@@ -127,8 +130,8 @@ const Footer = () => {
               </div>
               
               <div className="flex items-start space-x-3">
-                <div className="w-10 h-10 bg-purple-600/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Mail className="w-5 h-5 text-purple-400" />
+                <div className="w-10 h-10 bg-[#63316b]/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Mail className="w-5 h-5 text-[#63316b]" />
                 </div>
                 <div className="text-gray-400">
                   <p className="font-medium text-white mb-1">Email Us</p>
@@ -151,7 +154,7 @@ const Footer = () => {
                 </div>
                 <div className="flex justify-between">
                   <span>Sunday:</span>
-                  <span className="text-indigo-300">Emergency Only</span>
+                  <span className="text-[#63316b]">Emergency Only</span>
                 </div>
               </div>
             </div>
@@ -168,10 +171,10 @@ const Footer = () => {
             </div>
             
             <div className="flex flex-wrap justify-center lg:justify-end space-x-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-indigo-300 transition-colors duration-300">Privacy Policy</a>
-              <a href="#" className="text-gray-400 hover:text-indigo-300 transition-colors duration-300">Terms of Service</a>
-              <a href="#" className="text-gray-400 hover:text-indigo-300 transition-colors duration-300">Cookie Policy</a>
-              <a href="#" className="text-gray-400 hover:text-indigo-300 transition-colors duration-300">Sitemap</a>
+              <a href="#" className="text-gray-400 hover:text-[#63316b] transition-colors duration-300">Privacy Policy</a>
+              <a href="#" className="text-gray-400 hover:text-[#63316b] transition-colors duration-300">Terms of Service</a>
+              <a href="#" className="text-gray-400 hover:text-[#63316b] transition-colors duration-300">Cookie Policy</a>
+              <a href="#" className="text-gray-400 hover:text-[#63316b] transition-colors duration-300">Sitemap</a>
             </div>
           </div>
         </div>
