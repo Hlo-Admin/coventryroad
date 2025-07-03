@@ -21,7 +21,7 @@ const Header = () => {
   return (
     <header className="fixed top-4 left-4 right-4 z-50">
       <div className="max-w-7xl mx-auto">
-        <nav className="glass backdrop-blur-xl bg-white/80 border border-white/20 rounded-3xl px-6 lg:px-8 shadow-xl">
+        <nav className="glass backdrop-blur-xl bg-white/90 border border-white/30 rounded-3xl px-6 lg:px-8 shadow-xl">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <div className="flex items-center">
@@ -29,7 +29,7 @@ const Header = () => {
                 <img 
                   src="/lovable-uploads/a149de9b-ffc7-4ccb-89c6-45a712d8505a.png" 
                   alt="Coventry Road Dentalcare" 
-                  className="h-10 w-auto"
+                  className="h-8 w-auto"
                 />
               </Link>
             </div>
@@ -49,9 +49,9 @@ const Header = () => {
                   <ChevronDown className="w-4 h-4" />
                 </button>
                 
-                {/* Dropdown Menu */}
+                {/* Dropdown Menu - Enhanced visibility */}
                 <div 
-                  className={`absolute top-full left-0 mt-2 w-64 glass backdrop-blur-xl bg-white/90 border border-white/20 rounded-2xl shadow-xl py-2 transition-all duration-200 ${
+                  className={`absolute top-full left-0 mt-2 w-64 bg-white border border-gray-200 rounded-2xl shadow-2xl py-2 transition-all duration-200 z-50 ${
                     isServicesOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
                   }`}
                   onMouseEnter={() => setIsServicesOpen(true)}
@@ -61,7 +61,7 @@ const Header = () => {
                     <Link
                       key={index}
                       to={service.path}
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#63316b]/10 hover:text-[#63316b] transition-colors rounded-xl mx-2"
+                      className="block px-4 py-3 text-sm text-gray-800 hover:bg-[#63316b]/10 hover:text-[#63316b] transition-colors rounded-xl mx-2 font-medium"
                     >
                       {service.name}
                     </Link>

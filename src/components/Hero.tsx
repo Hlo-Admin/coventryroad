@@ -2,7 +2,7 @@ import { ArrowRight, Play, CheckCircle, Users, Award, Star } from 'lucide-react'
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 to-white">
+    <section className="relative min-h-screen pt-24 flex items-center overflow-hidden bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#63316b]/10 rounded-full mix-blend-multiply filter blur-3xl animate-float"></div>
