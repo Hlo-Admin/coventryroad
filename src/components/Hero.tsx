@@ -1,88 +1,87 @@
 
-import { ArrowRight, Play, CheckCircle, Users, Award, Star, MapPin, Phone } from 'lucide-react';
+import { Phone, Calendar, MapPin, Clock, Award, Users } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen pt-24 flex items-center overflow-hidden bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
-      {/* Background Elements */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-purple-50 via-white to-pink-50">
+      {/* Glassmorphism Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#63316b]/10 rounded-full mix-blend-multiply filter blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#63316b]/5 rounded-full mix-blend-multiply filter blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 glass bg-purple-200/30 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 glass bg-pink-200/30 rounded-full blur-3xl animate-float-delayed"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 glass bg-blue-200/20 rounded-full blur-2xl animate-pulse"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center space-x-2 bg-[#63316b]/10 text-[#63316b] px-4 py-2 rounded-full text-sm font-medium mb-8 animate-fadeInUp">
-            <MapPin className="w-4 h-4" />
-            <span>Premium Dental Care in Birmingham</span>
+          {/* Trust Indicators */}
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
+            <div className="glass bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-white/30">
+              <Award className="w-4 h-4 inline mr-2" />
+              BDA Good Practice Certified
+            </div>
+            <div className="glass bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-white/30">
+              <Users className="w-4 h-4 inline mr-2" />
+              25+ Years Experience
+            </div>
+            <div className="glass bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-white/30">
+              <MapPin className="w-4 h-4 inline mr-2" />
+              Coventry Local Practice
+            </div>
           </div>
 
-          {/* Main Heading */}
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-tight animate-fadeInUp" style={{ animationDelay: '0.1s' }}>
-            Your Perfect Smile
-            <span className="block text-[#63316b]">Starts Here</span>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 animate-fadeInUp">
+            Premium Dental Care in{' '}
+            <span className="gradient-text">Coventry</span>
           </h1>
-
-          {/* Subheading */}
-          <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
-            Experience exceptional dental care with our state-of-the-art treatments and compassionate approach. We're committed to giving you the confidence that comes with a healthy, beautiful smile.
+          
+          <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto animate-fadeInUp">
+            Where expertise meets empathy. Experience gentle, reliable dentistry delivered with honesty, precision, and heart at Coventry Road Dental Care.
           </p>
 
+          {/* Key Benefits */}
+          <div className="grid md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
+            <div className="glass bg-white/60 backdrop-blur-sm p-6 rounded-2xl border border-white/30 animate-fadeInUp">
+              <Phone className="w-8 h-8 text-[#63316b] mx-auto mb-3" />
+              <h3 className="font-semibold text-gray-900 mb-2">Same Day Appointments</h3>
+              <p className="text-gray-600 text-sm">Emergency and routine care available</p>
+            </div>
+            <div className="glass bg-white/60 backdrop-blur-sm p-6 rounded-2xl border border-white/30 animate-fadeInUp">
+              <Users className="w-8 h-8 text-[#63316b] mx-auto mb-3" />
+              <h3 className="font-semibold text-gray-900 mb-2">NHS & Private Options</h3>
+              <p className="text-gray-600 text-sm">Flexible payment plans available</p>
+            </div>
+            <div className="glass bg-white/60 backdrop-blur-sm p-6 rounded-2xl border border-white/30 animate-fadeInUp">
+              <Award className="w-8 h-8 text-[#63316b] mx-auto mb-3" />
+              <h3 className="font-semibold text-gray-900 mb-2">Advanced Technology</h3>
+              <p className="text-gray-600 text-sm">State-of-the-art equipment & techniques</p>
+            </div>
+          </div>
+
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fadeInUp" style={{ animationDelay: '0.3s' }}>
-            <button className="bg-[#63316b] text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#63316b]/90 transform hover:-translate-y-1 hover:shadow-xl transition-all duration-300 inline-flex items-center space-x-3 group">
-              <span>Book Your Consultation</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fadeInUp">
+            <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 shadow-2xl hover:shadow-xl hover:scale-105 inline-flex items-center space-x-2">
+              <Calendar className="w-5 h-5" />
+              <span>Book Your Free Consultation</span>
             </button>
-            
-            <button className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#63316b] hover:text-white transform hover:-translate-y-1 transition-all duration-300 inline-flex items-center space-x-3">
+            <button className="glass bg-white/80 backdrop-blur-sm text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 border border-white/30 inline-flex items-center space-x-2">
               <Phone className="w-5 h-5" />
-              <span>Call (024) 7699 2020</span>
+              <span>Call: 024 7699 2020</span>
             </button>
           </div>
 
-          {/* Trust Indicators */}
-          <div className="mt-16 animate-fadeInUp" style={{ animationDelay: '0.4s' }}>
-            <div className="flex flex-col sm:flex-row items-center justify-center space-y-6 sm:space-y-0 sm:space-x-12 text-gray-600">
-              <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-[#63316b]/10 rounded-full flex items-center justify-center">
-                  <CheckCircle className="w-6 h-6 text-[#63316b]" />
-                </div>
-                <div>
-                  <div className="font-semibold text-gray-900">15+ Years</div>
-                  <div className="text-sm">of Excellence</div>
-                </div>
+          {/* Quick Info */}
+          <div className="glass bg-white/70 backdrop-blur-sm rounded-2xl p-6 max-w-2xl mx-auto border border-white/30 animate-fadeInUp">
+            <div className="grid md:grid-cols-2 gap-4 text-sm">
+              <div className="flex items-center justify-center space-x-2">
+                <MapPin className="w-4 h-4 text-[#63316b]" />
+                <span className="text-gray-700">94 Coventry Rd, Bedworth, Coventry</span>
               </div>
-              
-              <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-[#63316b]/10 rounded-full flex items-center justify-center">
-                  <MapPin className="w-6 h-6 text-[#63316b]" />
-                </div>
-                <div>
-                  <div className="font-semibold text-gray-900">Birmingham</div>
-                  <div className="text-sm">Based Practice</div>
-                </div>
-              </div>
-              
-              <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-[#63316b]/10 rounded-full flex items-center justify-center">
-                  <Star className="w-6 h-6 text-[#63316b] fill-current" />
-                </div>
-                <div>
-                  <div className="font-semibold text-gray-900">5-Star</div>
-                  <div className="text-sm">Patient Reviews</div>
-                </div>
+              <div className="flex items-center justify-center space-x-2">
+                <Clock className="w-4 h-4 text-[#63316b]" />
+                <span className="text-gray-700">Mon-Fri: 8AM-6PM | Sat: 9AM-4PM</span>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-[#63316b] rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-[#63316b] rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
     </section>

@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 
 const About = () => {
   useEffect(() => {
-    document.title = "About Us - Coventry Road Dental Care | Expert Dental Team Birmingham";
+    document.title = "About Us - Coventry Road Dental Care | Expert Dental Team Coventry";
   }, []);
 
   return (
@@ -116,6 +116,34 @@ const About = () => {
             Whether you need a routine check-up, a smile makeover, or help overcoming dental anxiety — 
             our friendly, experienced team is ready to guide you.
           </p>
+        </div>
+
+        {/* Picture Tiles Section */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">Our Practice Environment</h3>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="glass rounded-2xl overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                alt="Modern dental clinic interior" 
+                className="w-full h-64 object-cover"
+              />
+            </div>
+            <div className="glass rounded-2xl overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                alt="State-of-the-art dental equipment" 
+                className="w-full h-64 object-cover"
+              />
+            </div>
+            <div className="glass rounded-2xl overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1472396961693-142e6e269027?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                alt="Comfortable patient care area" 
+                className="w-full h-64 object-cover"
+              />
+            </div>
+          </div>
         </div>
 
         {/* Meet Our Team */}

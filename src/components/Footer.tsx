@@ -16,10 +16,6 @@ const Footer = () => {
 
   const quickLinks = [
     "About Us",
-    "Our Team",
-    "Patient Reviews",
-    "New Patients",
-    "Payment Options",
     "Contact Us"
   ];
 
@@ -51,7 +47,7 @@ const Footer = () => {
             </Link>
             
             <p className="text-white/80 leading-relaxed">
-              Providing exceptional dental care to Birmingham and surrounding areas since 2008. Your smile is our priority, and your health is our commitment.
+              Providing exceptional dental care to Coventry and surrounding areas since 2008. Your smile is our priority, and your health is our commitment.
             </p>
             
             {/* Awards & Recognition */}
@@ -119,7 +115,7 @@ const Footer = () => {
                 </div>
                 <div className="text-white/80">
                   <p className="font-medium text-white mb-1">Visit Our Clinic</p>
-                  <p className="text-sm leading-relaxed">123 Coventry Road<br />Birmingham B26 3EA<br />United Kingdom</p>
+                  <p className="text-sm leading-relaxed">94 Coventry Rd<br />Bedworth, Coventry<br />CV12 8NW<br />United Kingdom</p>
                 </div>
               </div>
               
@@ -172,7 +168,7 @@ const Footer = () => {
             <div className="flex items-center space-x-2 text-white/80 text-sm">
               <span>© 2024 Coventry Road Dentalcare. All rights reserved.</span>
               <Heart className="w-4 h-4 text-red-400 fill-current" />
-              <span>Made with care in Birmingham</span>
+              <span>Made with care in Coventry</span>
             </div>
             
             <div className="flex flex-wrap justify-center lg:justify-end space-x-6 text-sm">
