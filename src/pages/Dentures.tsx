@@ -1,53 +1,261 @@
 
-import ServiceTemplate from '../components/ServiceTemplate';
+import { Phone, Calendar, CheckCircle, Users, Award, Star, Shield, Heart, Wrench, Clock } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 const Dentures = () => {
-  const serviceData = {
-    title: "Dentures",
-    subtitle: "Comfortable, natural-looking removable teeth replacement solutions",
-    description: "Modern dentures have come a long way from the uncomfortable, artificial-looking teeth of the past. Our custom-crafted dentures are designed using advanced materials and techniques to provide optimal comfort, natural appearance, and improved function. Whether you need partial or complete dentures, we create personalized solutions that restore your ability to eat, speak, and smile with confidence while maintaining the natural contours of your face.",
-    benefits: [
-      "Restored ability to eat a variety of foods comfortably",
-      "Improved speech and pronunciation",
-      "Enhanced facial support and youthful appearance",
-      "Cost-effective tooth replacement option",
-      "Immediate restoration of your smile",
-      "Custom-fit for maximum comfort and stability"
-    ],
-    process: [
-      "Comprehensive oral examination and treatment planning",
-      "Impressions and measurements of your mouth",
-      "Wax try-in to test fit, appearance, and bite",
-      "Custom fabrication of your dentures",
-      "Final fitting and adjustment for optimal comfort",
-      "Follow-up appointments for fine-tuning and care instructions"
-    ],
-    faq: [
-      {
-        question: "How long do dentures last?",
-        answer: "Well-maintained dentures typically last 5-10 years. Over time, your mouth changes shape, so periodic adjustments and eventual replacement are normal."
-      },
-      {
-        question: "Will dentures affect my eating?",
-        answer: "There's an adjustment period, but most patients can eat comfortably with dentures. We'll provide guidance on foods to try first and eating techniques."
-      },
-      {
-        question: "How do I care for my dentures?",
-        answer: "Daily cleaning with denture cleanser, soaking overnight, and regular dental checkups are essential. Handle them carefully as they can break if dropped."
-      },
-      {
-        question: "Can I sleep with my dentures in?",
-        answer: "It's generally recommended to remove dentures at night to give your gums a rest and prevent bacterial buildup. Soak them in denture solution overnight."
-      }
-    ]
-  };
+  const benefits = [
+    {
+      icon: <CheckCircle className="w-6 h-6 text-[#63316b]" />,
+      title: "Options for NHS and private care",
+      description: "Flexible payment options to suit your budget"
+    },
+    {
+      icon: <Users className="w-6 h-6 text-[#63316b]" />,
+      title: "Designed to suit your lifestyle and budget",
+      description: "Personalized solutions for every patient"
+    },
+    {
+      icon: <Star className="w-6 h-6 text-[#63316b]" />,
+      title: "Natural aesthetics that blend seamlessly",
+      description: "Look and feel like your natural teeth"
+    },
+    {
+      icon: <Award className="w-6 h-6 text-[#63316b]" />,
+      title: "Created by skilled, experienced dental technicians",
+      description: "Expert craftsmanship for superior quality"
+    },
+    {
+      icon: <Heart className="w-6 h-6 text-[#63316b]" />,
+      title: "Comfortable fit with soft or flexible materials",
+      description: "Advanced materials for maximum comfort"
+    },
+    {
+      icon: <Shield className="w-6 h-6 text-[#63316b]" />,
+      title: "Implant-supported options available",
+      description: "Extra stability for enhanced confidence"
+    }
+  ];
+
+  const dentureTypes = [
+    {
+      title: "Full Dentures",
+      description: "For complete tooth replacement in the upper or lower arch",
+      icon: <Wrench className="w-8 h-8 text-[#63316b]" />
+    },
+    {
+      title: "Partial Dentures", 
+      description: "Fill gaps between remaining teeth, preserving your natural smile",
+      icon: <Users className="w-8 h-8 text-[#63316b]" />
+    },
+    {
+      title: "Flexible Dentures",
+      description: "Soft, lightweight, and ideal for comfort",
+      icon: <Heart className="w-8 h-8 text-[#63316b]" />
+    },
+    {
+      title: "Implant-Supported Dentures",
+      description: "Fixed securely for confidence and ease of use",
+      icon: <Shield className="w-8 h-8 text-[#63316b]" />
+    }
+  ];
+
+  const faqs = [
+    {
+      question: "What is a denture?",
+      answer: "Dentures are removable appliances, made of acrylic, chrome, or flexible materials, with artificial teeth attached. They restore the appearance and function of natural teeth."
+    },
+    {
+      question: "What are the benefits of dentures?",
+      answer: "Modern dentures look more natural than ever before and allow patients to eat, smile, and speak with comfort. We offer several styles and materials suited to different needs and budgets."
+    },
+    {
+      question: "Can I remove my denture?",
+      answer: "Yes. Dentures are designed to be removed daily — typically at night — for cleaning and maintenance, similar to caring for natural teeth."
+    }
+  ];
 
   return (
     <>
       <Header />
-      <ServiceTemplate {...serviceData} />
+      <div className="min-h-screen pt-16">
+        {/* Hero Section */}
+        <section className="relative bg-gradient-to-br from-gray-50 to-white py-20 lg:py-32 overflow-hidden">
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center opacity-10"></div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6 animate-fadeInUp">
+                Restore Your Smile with{' '}
+                <span className="text-[#63316b]">Dentures</span> in Coventry
+              </h1>
+              <p className="text-xl lg:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto animate-fadeInUp">
+                Tailored solutions that fit comfortably, look natural, and bring back confidence in your everyday life.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp">
+                <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
+                  <Phone className="w-5 h-5" />
+                  <span>Request a Callback</span>
+                </button>
+                <button className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2">
+                  <Calendar className="w-5 h-5" />
+                  <span>Book a Free Denture Consultation</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* What Are Dentures Section */}
+        <section className="py-16 lg:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                A Trusted Way to Restore Missing Teeth
+              </h2>
+            </div>
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="prose prose-lg text-gray-700 space-y-4">
+                <p>
+                  There's no true substitute for your own natural teeth, but well-crafted dentures can come close in both function and appearance.
+                </p>
+                <p>At Coventry Road Dental, we offer:</p>
+                <ul className="space-y-2">
+                  <li>• Full and partial dentures</li>
+                  <li>• Acrylic, chrome, and flexible base options</li>
+                  <li>• Implant-supported alternatives for a fixed feel</li>
+                </ul>
+                <p>
+                  Advancements in denture materials allow for natural-looking tooth shades and improved comfort.
+                </p>
+              </div>
+              <div className="bg-gray-50 rounded-2xl p-8 flex items-center justify-center">
+                <div className="text-center">
+                  <div className="w-32 h-32 bg-[#63316b]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Heart className="w-16 h-16 text-[#63316b]" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Modern Dentures</h3>
+                  <p className="text-gray-600">Natural-looking and comfortable</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Benefits Section */}
+        <section className="py-16 lg:py-24 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                Why Choose Our Denture Treatments
+              </h2>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {benefits.map((benefit, index) => (
+                <div key={index} className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                  <div className="mb-4">
+                    {benefit.icon}
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{benefit.title}</h3>
+                  <p className="text-gray-600 text-sm">{benefit.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Quote Section */}
+        <section className="py-16 bg-[#63316b] text-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <blockquote className="text-2xl lg:text-3xl font-light italic mb-6">
+              "Loose dentures can undermine confidence and limit quality of life. We help you feel like yourself again — with comfort, function, and a confident smile."
+            </blockquote>
+            <cite className="text-lg opacity-90">— Coventry Road Dental Team</cite>
+          </div>
+        </section>
+
+        {/* Denture Types Section */}
+        <section className="py-16 lg:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                Dentures That Fit Your Needs
+              </h2>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+              {dentureTypes.map((type, index) => (
+                <div key={index} className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100">
+                  <div className="mb-4 flex justify-center">
+                    {type.icon}
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2 text-center">{type.title}</h3>
+                  <p className="text-gray-600 text-sm text-center">{type.description}</p>
+                </div>
+              ))}
+            </div>
+            <div className="text-center">
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                Whether you prefer a traditional or advanced fixed solution, we'll help you find the option that fits you best.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-16 lg:py-24 bg-gray-50">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                Frequently Asked Questions
+              </h2>
+            </div>
+            <Accordion type="single" collapsible className="space-y-4">
+              {faqs.map((faq, index) => (
+                <AccordionItem key={index} value={`item-${index}`} className="bg-white rounded-lg shadow-sm border">
+                  <AccordionTrigger className="px-6 py-4 text-left font-semibold text-gray-900 hover:no-underline">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="px-6 pb-4 text-gray-700">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </section>
+
+        {/* Fixed Option Highlight */}
+        <section className="py-16 bg-gradient-to-r from-[#63316b]/5 to-[#63316b]/10">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
+              Not a fan of removable dentures?
+            </h3>
+            <p className="text-lg text-gray-600 mb-6">
+              Ask us about implant-supported dentures — a more secure and lasting alternative that combines the stability of implants with the versatility of dentures.
+            </p>
+          </div>
+        </section>
+
+        {/* Final CTA Section */}
+        <section className="py-16 bg-gradient-to-r from-[#63316b] to-[#63316b]/90 text-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 className="text-2xl lg:text-3xl font-bold mb-6">
+              Restore comfort, speech, and confidence — without compromise.
+            </h3>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="bg-white text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 inline-flex items-center space-x-2">
+                <Phone className="w-5 h-5" />
+                <span>Request Callback</span>
+              </button>
+              <Link to="/" className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-[#63316b] transition-all duration-300 inline-flex items-center space-x-2">
+                <Calendar className="w-5 h-5" />
+                <span>Schedule Free Consultation</span>
+              </Link>
+            </div>
+          </div>
+        </section>
+      </div>
       <Footer />
     </>
   );
