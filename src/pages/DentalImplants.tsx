@@ -1,5 +1,4 @@
-
-import { ArrowRight, Phone, Calendar, CheckCircle, Tooth, Wrench, MapPin, User, Zap, Clock, Smile, Shield, Heart } from 'lucide-react';
+import { ArrowRight, Phone, Calendar, CheckCircle, Heart, Wrench, MapPin, User, Zap, Clock, Smile, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -8,7 +7,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 const DentalImplants = () => {
   const benefits = [
     {
-      icon: <Tooth className="w-6 h-6 text-[#63316b]" />,
+      icon: <Heart className="w-6 h-6 text-[#63316b]" />,
       title: "Replace a missing tooth or multiple teeth",
       description: "Restore single teeth or multiple missing teeth"
     },
