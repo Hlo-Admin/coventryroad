@@ -136,7 +136,7 @@ const FullArchImplants = () => {
         </div>
       </section>
 
-      {/* Before & After Gallery - Revamped */}
+      {/* Before & After Gallery - Updated with swapped images */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-centre mb-16">
@@ -149,11 +149,11 @@ const FullArchImplants = () => {
           </div>
           
           <div className="grid lg:grid-cols-2 gap-12 items-centre">
-            {/* Before Image */}
+            {/* Before Image - now showing the after image */}
             <div className="relative group">
               <div className="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-gray-100">
                 <img 
-                  src="/lovable-uploads/ae0893e2-a6ea-4235-9a36-845cce3bbe67.png" 
+                  src="/lovable-uploads/b3719a1c-237e-40d0-9e7a-b224c1dcd1d6.png" 
                   alt="Before dental implant treatment"
                   className="w-full h-64 md:h-80 object-cover"
                 />
@@ -163,11 +163,11 @@ const FullArchImplants = () => {
               </div>
             </div>
 
-            {/* After Image */}
+            {/* After Image - now showing the before image */}
             <div className="relative group">
               <div className="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-green-100">
                 <img 
-                  src="/lovable-uploads/b3719a1c-237e-40d0-9e7a-b224c1dcd1d6.png" 
+                  src="/lovable-uploads/ae0893e2-a6ea-4235-9a36-845cce3bbe67.png" 
                   alt="After dental implant treatment"
                   className="w-full h-64 md:h-80 object-cover"
                 />

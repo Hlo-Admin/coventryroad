@@ -1,18 +1,18 @@
-
 import { useState } from 'react';
 import { Phone, Mail, Calendar, Play, ChevronLeft, ChevronRight, Eye, Utensils, Clock, Smile, Shield, User, CheckCircle, Users, Heart, Star, MessageCircle, DollarSign, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import ServiceTiles from '../components/ServiceTiles';
 
 const InvisalignBraces = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
   const journeySteps = [
-    { image: '/placeholder.svg', caption: '3D Scan Process' },
-    { image: '/placeholder.svg', caption: 'Digital Smile Preview' },
-    { image: '/placeholder.svg', caption: 'Custom Aligners' },
-    { image: '/placeholder.svg', caption: 'Final Transformation' }
+    { image: '/lovable-uploads/6835c5cd-d5a1-4f43-bdd2-b4f8e4281f53.png', caption: '3D Scan Process' },
+    { image: '/lovable-uploads/b36a9abe-94d8-4d84-bfc4-8cfa96f50a54.png', caption: 'Custom Aligners' },
+    { image: '/lovable-uploads/f5f56c66-3af5-4799-8c25-992c6ef7417c.png', caption: 'Final Transformation' }
   ];
 
   const benefits = [
@@ -47,6 +47,10 @@ const InvisalignBraces = () => {
 
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + journeySteps.length) % journeySteps.length);
+  };
+
+  const handleVideoPlay = () => {
+    setIsVideoPlaying(true);
   };
 
   return (
@@ -87,7 +91,7 @@ const InvisalignBraces = () => {
                 Straighten Your Teeth Without Brackets or Wires
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                Misaligned teeth can affect your confidence, and traditional braces aren't for everyone. At Coventry Road Dental, we offer Invisalign – the clear solution to straighter teeth for adults and teens.
+                Misaligned teeth can affect your confidence, and traditional braces aren't for everyone. At Coventry Road Dentalcare, we offer Invisalign – the clear solution to straighter teeth for adults and teens.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
                 Using advanced 3D imaging, we can show you your final smile even before your treatment begins.
@@ -95,12 +99,35 @@ const InvisalignBraces = () => {
             </div>
             
             <div className="lg:pl-8">
-              <div className="bg-gray-100 rounded-2xl p-8 h-96 flex items-center justify-center">
-                <img 
-                  src="/placeholder.svg" 
-                  alt="Invisalign aligners"
-                  className="w-full h-full object-cover rounded-lg"
-                />
+              <div className="bg-gray-100 rounded-2xl p-8 h-96 flex items-center justify-center relative">
+                {!isVideoPlaying ? (
+                  <>
+                    <img 
+                      src="/lovable-uploads/b36a9abe-94d8-4d84-bfc4-8cfa96f50a54.png" 
+                      alt="Invisalign aligners"
+                      className="w-full h-full object-cover rounded-lg"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <button 
+                        onClick={handleVideoPlay}
+                        className="w-20 h-20 bg-[#63316b] rounded-full flex items-center justify-center hover:bg-[#63316b]/90 transition-all duration-300 group shadow-lg"
+                      >
+                        <Play className="w-8 h-8 text-white ml-1 group-hover:scale-110 transition-transform" fill="currentColor" />
+                      </button>
+                    </div>
+                  </>
+                ) : (
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src="https://www.youtube.com/embed/hagnJjEydjE?autoplay=1"
+                    title="Invisalign Treatment Process"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="rounded-lg"
+                  ></iframe>
+                )}
               </div>
             </div>
           </div>
@@ -262,7 +289,7 @@ const InvisalignBraces = () => {
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Coventry Road Dental?</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Coventry Road Dentalcare?</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -300,6 +327,9 @@ const InvisalignBraces = () => {
           </div>
         </div>
       </section>
+
+      {/* Service Tiles */}
+      <ServiceTiles />
 
       {/* Floating Chat CTA */}
       <div className="fixed bottom-6 right-6 z-50">

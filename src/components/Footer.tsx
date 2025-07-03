@@ -34,7 +34,7 @@ const Footer = () => {
             <Link to="/" className="flex items-center space-x-3">
               <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center border border-white/20">
                 <img 
-                  src="/lovable-uploads/a149de9b-ffc7-4ccb-89c6-45a712d8505a.png" 
+                  src="/lovable-uploads/6835c5cd-d5a1-4f43-bdd2-b4f8e4281f53.png" 
                   alt="Coventry Road Dentalcare" 
                   className="h-8 w-auto"
                 />
