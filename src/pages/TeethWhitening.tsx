@@ -1,53 +1,314 @@
 
-import ServiceTemplate from '../components/ServiceTemplate';
+import { ArrowRight, Phone, Calendar, CheckCircle, Star, Sparkles, Home, Users, Clock, DollarSign, RefreshCw, Zap } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 const TeethWhitening = () => {
-  const serviceData = {
-    title: "Teeth Whitening",
-    subtitle: "Achieve a brighter, more confident smile with professional whitening treatments",
-    description: "Professional teeth whitening is the fastest and most effective way to brighten your smile. Our advanced whitening systems can lighten your teeth by several shades in just one visit, removing years of stains from coffee, wine, smoking, and natural aging. We offer both in-office treatments for immediate results and take-home kits for gradual whitening at your convenience, all supervised by our dental professionals for safety and optimal results.",
-    benefits: [
-      "Dramatic results - teeth can become 3-8 shades whiter",
-      "Safe and effective under professional supervision",
-      "Fast treatment - results visible immediately",
-      "Boosts confidence and enhances your smile",
-      "Multiple options to fit your schedule and budget",
-      "Long-lasting results with proper maintenance"
-    ],
-    process: [
-      "Comprehensive dental examination to ensure suitability",
-      "Professional cleaning to remove surface stains and plaque",
-      "Gum protection and application of whitening gel",
-      "Light activation to accelerate the whitening process",
-      "Multiple applications during single visit for optimal results",
-      "Post-treatment care instructions and maintenance tips"
-    ],
-    faq: [
-      {
-        question: "How long do teeth whitening results last?",
-        answer: "Professional whitening results typically last 1-3 years, depending on your diet, habits, and oral hygiene. Touch-up treatments can help maintain your bright smile."
-      },
-      {
-        question: "Is teeth whitening safe?",
-        answer: "Yes, professional teeth whitening is completely safe when performed by qualified dental professionals. We use clinically proven methods and monitor your treatment."
-      },
-      {
-        question: "Will whitening cause tooth sensitivity?",
-        answer: "Some patients experience temporary sensitivity, which typically subsides within 24-48 hours. We use desensitizing agents to minimize any discomfort."
-      },
-      {
-        question: "Who is not a candidate for teeth whitening?",
-        answer: "Pregnant women, children under 16, and patients with certain dental conditions may not be suitable candidates. We'll assess your eligibility during consultation."
-      }
-    ]
-  };
+  const benefits = [
+    {
+      icon: <Sparkles className="w-6 h-6 text-[#63316b]" />,
+      title: "Brightens stained and ageing teeth",
+      description: "Removes years of discoloration from coffee, wine, and natural aging"
+    },
+    {
+      icon: <Star className="w-6 h-6 text-[#63316b]" />,
+      title: "Boosts confidence and self-esteem",
+      description: "Feel more confident with a brighter, more attractive smile"
+    },
+    {
+      icon: <CheckCircle className="w-6 h-6 text-[#63316b]" />,
+      title: "Improves overall appearance",
+      description: "A whiter smile can make you look younger and more vibrant"
+    },
+    {
+      icon: <Clock className="w-6 h-6 text-[#63316b]" />,
+      title: "Safe, fast, and non-invasive",
+      description: "Professional-grade treatment with no drilling or surgery required"
+    },
+    {
+      icon: <DollarSign className="w-6 h-6 text-[#63316b]" />,
+      title: "Affordable and long-lasting",
+      description: "Cost-effective treatment with results that can last for years"
+    },
+    {
+      icon: <RefreshCw className="w-6 h-6 text-[#63316b]" />,
+      title: "Easy top-ups from home",
+      description: "Maintain your results with convenient at-home touch-ups"
+    }
+  ];
+
+  const features = [
+    {
+      icon: <CheckCircle className="w-8 h-8 text-[#63316b]" />,
+      title: "Custom trays tailored to your mouth",
+      description: "Perfect fit for optimal results"
+    },
+    {
+      icon: <Home className="w-8 h-8 text-[#63316b]" />,
+      title: "Use at home at your own pace",
+      description: "Convenient treatment on your schedule"
+    },
+    {
+      icon: <Users className="w-8 h-8 text-[#63316b]" />,
+      title: "Advised by trained professionals",
+      description: "Expert guidance throughout your journey"
+    },
+    {
+      icon: <Zap className="w-8 h-8 text-[#63316b]" />,
+      title: "Quick, comfortable, safe, and pain-free",
+      description: "Professional results without discomfort"
+    }
+  ];
+
+  const steps = [
+    {
+      number: "01",
+      title: "Professional Consultation",
+      description: "We'll assess your teeth, shade, goals and recommend the best whitening brand for you."
+    },
+    {
+      number: "02",
+      title: "iTero Scan",
+      description: "A quick 3D scan of your teeth is taken to create your custom-fit trays."
+    },
+    {
+      number: "03",
+      title: "Start Whitening at Home",
+      description: "Pick up your trays and gels, then whiten from home over the next few days — it's that simple!"
+    },
+    {
+      number: "04",
+      title: "Top Up Anytime",
+      description: "You can re-use your trays with additional gel whenever you want to refresh your brightness."
+    }
+  ];
+
+  const faqs = [
+    {
+      question: "Is teeth whitening right for me?",
+      answer: "Yes! If your teeth have dulled over time or you want to boost your smile safely and affordably, whitening is a great choice."
+    },
+    {
+      question: "How long will the treatment take?",
+      answer: "After your scan, you'll collect your custom trays and gels. Your results will depend on your current shade, lifestyle, and diet."
+    },
+    {
+      question: "Does it hurt?",
+      answer: "Whitening is painless when supervised by a dental professional. Some may experience temporary sensitivity — and we offer solutions to help."
+    },
+    {
+      question: "Can I whiten again later?",
+      answer: "Absolutely. Once you have your trays, you can simply purchase more gel to refresh your smile anytime."
+    },
+    {
+      question: "What about crowns, veneers, or dentures?",
+      answer: "These materials don't whiten. We'll recommend cleaning or replacement if needed to ensure your smile looks even and natural."
+    }
+  ];
 
   return (
     <>
       <Header />
-      <ServiceTemplate {...serviceData} />
+      <div className="min-h-screen pt-16">
+        {/* Hero Section */}
+        <section className="relative bg-gradient-to-br from-gray-50 to-white py-20 lg:py-32 overflow-hidden">
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center opacity-10"></div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6 animate-fadeInUp">
+                Brighten Your Smile with{' '}
+                <span className="text-[#63316b]">Teeth Whitening</span> in Coventry
+              </h1>
+              <p className="text-xl lg:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto animate-fadeInUp">
+                Safe. Professional. Pain-free. Done from the comfort of your home.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp">
+                <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
+                  <Phone className="w-5 h-5" />
+                  <span>Request a Callback</span>
+                </button>
+                <button className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2">
+                  <Calendar className="w-5 h-5" />
+                  <span>Book My Free Consultation</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Why Teeth Whitening Section */}
+        <section className="py-16 lg:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="order-2 lg:order-1">
+                <img 
+                  src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                  alt="Professional teeth whitening process" 
+                  className="w-full h-96 object-cover rounded-2xl shadow-lg"
+                />
+              </div>
+              <div className="order-1 lg:order-2">
+                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+                  A Simple Treatment with a Big Impact
+                </h2>
+                <div className="prose prose-lg text-gray-700 space-y-4">
+                  <p>
+                    Teeth whitening is one of the easiest, most cost-effective, and longest-lasting ways to enhance your smile — and boost your confidence.
+                  </p>
+                  <p>
+                    At Coventry Road Dental Care, we offer two professional-grade home whitening systems with custom trays and gels, selected based on:
+                  </p>
+                  <ul className="space-y-2 mt-4">
+                    <li className="flex items-center space-x-2">
+                      <CheckCircle className="w-5 h-5 text-[#63316b]" />
+                      <span>The shade of your teeth</span>
+                    </li>
+                    <li className="flex items-center space-x-2">
+                      <CheckCircle className="w-5 h-5 text-[#63316b]" />
+                      <span>Your desired brightness</span>
+                    </li>
+                    <li className="flex items-center space-x-2">
+                      <CheckCircle className="w-5 h-5 text-[#63316b]" />
+                      <span>Your budget</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Features Section */}
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                Two whitening brands, one goal: Your best smile
+              </h2>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              {features.map((feature, index) => (
+                <div key={index} className="text-center">
+                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
+                  <p className="text-gray-600 text-sm">{feature.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Quote Section */}
+        <section className="py-16 bg-[#63316b] text-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <blockquote className="text-2xl lg:text-3xl font-light italic mb-6">
+              "Tooth whitening can give your smile and confidence a boost — and we love seeing our patients light up from the inside out."
+            </blockquote>
+            <cite className="text-lg opacity-90">— Coventry Road Dental Team</cite>
+          </div>
+        </section>
+
+        {/* Benefits Section */}
+        <section className="py-16 lg:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                What You'll Love About It
+              </h2>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {benefits.map((benefit, index) => (
+                <div key={index} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <div className="flex items-start space-x-4">
+                    <div className="flex-shrink-0">
+                      {benefit.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2">{benefit.title}</h3>
+                      <p className="text-gray-600">{benefit.description}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Steps Section */}
+        <section className="py-16 lg:py-24 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                How It Works — Your Whitening Journey
+              </h2>
+            </div>
+            <div className="space-y-8">
+              {steps.map((step, index) => (
+                <div key={index} className="flex items-start space-x-6">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-[#63316b] text-white rounded-full flex items-center justify-center font-bold text-lg">
+                      {step.number}
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">{step.title}</h3>
+                    <p className="text-gray-600 text-lg">{step.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-16 lg:py-24">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                Whitening FAQs
+              </h2>
+            </div>
+            <Accordion type="single" collapsible className="space-y-4">
+              {faqs.map((faq, index) => (
+                <AccordionItem key={index} value={`item-${index}`} className="bg-white rounded-lg shadow-sm border">
+                  <AccordionTrigger className="px-6 py-4 text-left font-semibold text-gray-900 hover:no-underline">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="px-6 pb-4 text-gray-700">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </section>
+
+        {/* Final CTA Section */}
+        <section className="py-16 bg-gradient-to-r from-[#63316b] to-[#63316b]/90 text-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+              Once you brighten your smile, everything changes
+            </h2>
+            <p className="text-xl mb-8 opacity-90">
+              Confidence, presence, self-image — it all starts with a brighter smile.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="bg-white text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 inline-flex items-center space-x-2">
+                <Phone className="w-5 h-5" />
+                <span>Book My Free Consultation</span>
+              </button>
+              <Link to="/" className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-[#63316b] transition-all duration-300 inline-flex items-center space-x-2">
+                <ArrowRight className="w-5 h-5" />
+                <span>Back to Home</span>
+              </Link>
+            </div>
+          </div>
+        </section>
+      </div>
       <Footer />
     </>
   );
