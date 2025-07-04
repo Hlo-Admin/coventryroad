@@ -1,5 +1,12 @@
-
-import { Phone, Calendar, MapPin, Clock, Award, Users, ArrowRight } from 'lucide-react';
+import {
+  Phone,
+  Calendar,
+  MapPin,
+  Clock,
+  Award,
+  Users,
+  ArrowRight,
+} from "lucide-react";
 
 const Hero = () => {
   return (
@@ -27,12 +34,13 @@ const Hero = () => {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 leading-tight">
-              Transform Your Smile in{' '}
+              Transform Your Smile in{" "}
               <span className="gradient-text">Coventry</span>
             </h1>
-            
+
             <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-xl">
-              Expert dental care with advanced technology. Same-day appointments available. NHS & Private options.
+              Expert dental care with advanced technology. Same-day appointments
+              available. NHS & Private options.
             </p>
 
             {/* Primary CTA */}
@@ -54,13 +62,17 @@ const Hero = () => {
                 <div className="w-8 h-8 bg-[#63316b]/10 rounded-lg flex items-center justify-center">
                   <Phone className="w-4 h-4 text-[#63316b]" />
                 </div>
-                <span className="text-sm font-medium text-gray-700">Same Day Emergency Care</span>
+                <span className="text-sm font-medium text-gray-700">
+                  Same Day Emergency Care
+                </span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 bg-[#63316b]/10 rounded-lg flex items-center justify-center">
                   <Award className="w-4 h-4 text-[#63316b]" />
                 </div>
-                <span className="text-sm font-medium text-gray-700">Advanced Technology</span>
+                <span className="text-sm font-medium text-gray-700">
+                  Advanced Technology
+                </span>
               </div>
             </div>
 
@@ -69,7 +81,9 @@ const Hero = () => {
               <div className="flex flex-col sm:flex-row sm:items-center gap-3 text-sm">
                 <div className="flex items-center space-x-2">
                   <MapPin className="w-4 h-4 text-[#63316b]" />
-                  <span className="text-gray-700">94 Coventry Rd, Bedworth</span>
+                  <span className="text-gray-700">
+                    94 Coventry Rd, Bedworth
+                  </span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Clock className="w-4 h-4 text-[#63316b]" />
@@ -81,14 +95,16 @@ const Hero = () => {
 
           {/* Right Space for 3D Element */}
           <div className="hidden lg:flex items-center justify-center">
-            <div className="w-full h-96 bg-gradient-to-br from-purple-50/50 to-pink-50/50 rounded-2xl border border-gray-200/50 flex items-center justify-center">
-              <div className="text-center text-gray-400">
-                <div className="w-16 h-16 bg-[#63316b]/10 rounded-2xl mx-auto mb-4 flex items-center justify-center">
-                  <Award className="w-8 h-8 text-[#63316b]" />
-                </div>
-                <p className="text-sm">3D Element Placeholder</p>
-                <p className="text-xs">Spline Integration</p>
-              </div>
+            <div className="w-full h-[36rem] rounded-2xl border border-gray-200/50 flex items-center justify-center">
+              <iframe
+                src="https://my.spline.design/untitled-g41916vVo1fiGca33wbZbm3e/"
+                frameBorder="0"
+                width="100%"
+                height="100%"
+                className="rounded-2xl"
+                title="3D Spline Element"
+                allowFullScreen
+              ></iframe>
             </div>
           </div>
         </div>
