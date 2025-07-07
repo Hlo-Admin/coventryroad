@@ -56,7 +56,7 @@ const Testimonials = () => {
 
   return (
     <section className="py-24 bg-gradient-to-br from-white via-purple-50/40 to-pink-50/40">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12 tracking-tight">
           What Our Customers Say
         </h2>
@@ -71,9 +71,9 @@ const Testimonials = () => {
               {testimonials.map((t, i) => (
                 <CarouselItem
                   key={i}
-                  className="flex justify-center basis-1/2 max-w-[50%]"
+                  className="flex justify-center basis-1/3 max-w-[33.333%]"
                 >
-                  <div className="relative bg-white/90 backdrop-blur-sm border border-gray-200 rounded-3xl shadow-lg p-8 flex flex-col justify-between min-h-[220px] max-w-xl w-full transition-transform hover:scale-[1.025] hover:shadow-xl duration-300">
+                  <div className="relative bg-white/90 backdrop-blur-sm border border-gray-200 rounded-3xl shadow-lg p-10 flex flex-col justify-between min-h-[220px] max-w-2xl w-full transition-transform hover:scale-[1.025] hover:shadow-xl duration-300">
                     <div className="flex items-center mb-4">
                       <div className="w-10 h-10 rounded-full bg-[#63316b]/10 flex items-center justify-center mr-3">
                         <span className="text-xl font-semibold text-[#63316b]">

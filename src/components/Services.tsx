@@ -8,6 +8,8 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import React, { useRef, useEffect } from "react";
+import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 
 const Services = () => {
   const services = [
@@ -69,6 +71,34 @@ const Services = () => {
     },
   ];
 
+  // Split into two rows
+  const topRow = services.slice(0, 4);
+  const bottomRow = services.slice(4, 8);
+
+  // Carousel refs
+  const topApiRef = useRef(null);
+  const bottomApiRef = useRef(null);
+
+  // Auto-scroll top row right
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (topApiRef.current) {
+        topApiRef.current.scrollNext();
+      }
+    }, 2500);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Auto-scroll bottom row left
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (bottomApiRef.current) {
+        bottomApiRef.current.scrollPrev();
+      }
+    }, 2500);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section id="services" className="py-24 bg-white relative overflow-hidden">
       {/* Background Elements */}
@@ -95,60 +125,129 @@ const Services = () => {
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {services.map((service, index) => (
-            <Link
-              key={index}
-              to={service.path}
-              className="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 hover:border-[#63316b]/20"
-              style={{
-                animationDelay: `${index * 0.1}s`,
-              }}
-            >
-              {/* Image */}
-              <div className="aspect-[4/3] overflow-hidden">
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
-                  style={{ display: "block" }}
-                />
-              </div>
-
-              {/* Content */}
-              <div className="p-8">
-                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-[#63316b] transition-colors">
-                  {service.title}
-                </h3>
-
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  {service.description}
-                </p>
-
-                {/* CTA */}
-                <div className="inline-flex items-center space-x-2 text-[#63316b] font-semibold group/btn">
-                  <span>Learn More</span>
-                  <svg
-                    className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
+        <div className="space-y-8">
+          {/* Top Row Carousel */}
+          <Carousel
+            setApi={(api) => (topApiRef.current = api)}
+            opts={{ loop: true, slidesToScroll: 1 }}
+          >
+            <CarouselContent className="flex">
+              {topRow.map((service, index) => (
+                <CarouselItem
+                  key={index}
+                  className="basis-1/3 max-w-[33.333%] px-2"
+                >
+                  <Link
+                    to={service.path}
+                    className="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 hover:border-[#63316b]/20"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    />
-                  </svg>
-                </div>
-              </div>
+                    {/* Image */}
+                    <div className="aspect-[4/3] overflow-hidden">
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                        style={{ display: "block" }}
+                      />
+                    </div>
 
-              {/* Hover Effect */}
-              <div className="absolute inset-0 bg-[#63316b]/0 group-hover:bg-[#63316b]/5 transition-all duration-500"></div>
-            </Link>
-          ))}
+                    {/* Content */}
+                    <div className="p-8">
+                      <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-[#63316b] transition-colors">
+                        {service.title}
+                      </h3>
+
+                      <p className="text-gray-600 mb-6 leading-relaxed">
+                        {service.description}
+                      </p>
+
+                      {/* CTA */}
+                      <div className="inline-flex items-center space-x-2 text-[#63316b] font-semibold group/btn">
+                        <span>Learn More</span>
+                        <svg
+                          className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+
+                    {/* Hover Effect */}
+                    <div className="absolute inset-0 bg-[#63316b]/0 group-hover:bg-[#63316b]/5 transition-all duration-500"></div>
+                  </Link>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+          {/* Bottom Row Carousel */}
+          <Carousel
+            setApi={(api) => (bottomApiRef.current = api)}
+            opts={{ loop: true, slidesToScroll: 1 }}
+          >
+            <CarouselContent className="flex">
+              {bottomRow.map((service, index) => (
+                <CarouselItem
+                  key={index}
+                  className="basis-1/3 max-w-[33.333%] px-2"
+                >
+                  <Link
+                    to={service.path}
+                    className="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 hover:border-[#63316b]/20"
+                  >
+                    {/* Image */}
+                    <div className="aspect-[4/3] overflow-hidden">
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                        style={{ display: "block" }}
+                      />
+                    </div>
+
+                    {/* Content */}
+                    <div className="p-8">
+                      <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-[#63316b] transition-colors">
+                        {service.title}
+                      </h3>
+
+                      <p className="text-gray-600 mb-6 leading-relaxed">
+                        {service.description}
+                      </p>
+
+                      {/* CTA */}
+                      <div className="inline-flex items-center space-x-2 text-[#63316b] font-semibold group/btn">
+                        <span>Learn More</span>
+                        <svg
+                          className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+
+                    {/* Hover Effect */}
+                    <div className="absolute inset-0 bg-[#63316b]/0 group-hover:bg-[#63316b]/5 transition-all duration-500"></div>
+                  </Link>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
         </div>
       </div>
     </section>

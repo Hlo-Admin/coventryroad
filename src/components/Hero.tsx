@@ -34,7 +34,7 @@ const Hero = () => {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 leading-tight">
-              Dentist in{" "}
+              Dentists in{" "}
               <span className="gradient-text">Coventry</span>
             </h1>
 
@@ -46,7 +46,7 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <button className="bg-[#63316b] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#63316b]/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center space-x-2 group">
                 <Calendar className="w-5 h-5" />
-                <span>Book Free Consultation</span>
+                <span>Book An Appointment</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
               <button className="bg-white/80 backdrop-blur-sm text-[#63316b] px-8 py-4 rounded-xl font-semibold hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl border border-gray-200 inline-flex items-center justify-center space-x-2">
