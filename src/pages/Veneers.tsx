@@ -1,78 +1,101 @@
-import { ArrowRight, Phone, Calendar, CheckCircle, Sparkles, Smile, Shield, DollarSign, Syringe, Heart } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import ServiceTiles from '../components/ServiceTiles';
-import FloatingBubble from '../components/FloatingBubble';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import {
+  ArrowRight,
+  Phone,
+  Calendar,
+  CheckCircle,
+  Sparkles,
+  Smile,
+  Shield,
+  DollarSign,
+  Syringe,
+  Heart,
+} from "lucide-react";
+import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import ServiceTiles from "../components/ServiceTiles";
+import FloatingBubble from "../components/FloatingBubble";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const Veneers = () => {
   useEffect(() => {
-    document.title = "Porcelain Veneers - Transform Your Smile | Coventry Road Dental Care";
+    document.title =
+      "Porcelain Veneers - Transform Your Smile | Coventry Road Dental Care";
     window.scrollTo(0, 0);
   }, []);
 
   const benefits = [
     {
-      icon: <Sparkles className="w-6 h-6 text-[#63316b]" />,
-      title: "Instant smile enhancement",
-      description: "Transform your smile in just a few visits"
+      icon: <Smile className="w-6 h-6 text-[#63316b]" />,
+      title: "Enhance your natural smile line.",
+      description:
+        "Veneers are designed to enhance the natural curve and appearance of your smile.",
     },
     {
-      icon: <Smile className="w-6 h-6 text-[#63316b]" />,
-      title: "Fixes cracks, chips, gaps, or stains",
-      description: "Address multiple cosmetic concerns at once"
+      icon: <Sparkles className="w-6 h-6 text-[#63316b]" />,
+      title: "Gives an instant boost to your smile.",
+      description: "Get a brighter, more confident smile in just a few visits.",
     },
     {
       icon: <CheckCircle className="w-6 h-6 text-[#63316b]" />,
-      title: "Matches the natural look of your teeth",
-      description: "Custom-crafted to blend seamlessly"
+      title: "Improves natural colour of teeth.",
+      description:
+        "Veneers can improve the shade and brightness of your teeth.",
     },
     {
       icon: <Shield className="w-6 h-6 text-[#63316b]" />,
-      title: "Preserves more of your original tooth",
-      description: "Minimally invasive treatment approach"
+      title: "Blends in with your original teeth.",
+      description:
+        "Custom-crafted to blend seamlessly with your natural teeth.",
+    },
+    {
+      icon: <Heart className="w-6 h-6 text-[#63316b]" />,
+      title: "Pain-free treatment.",
+      description: "The procedure is comfortable and minimally invasive.",
     },
     {
       icon: <DollarSign className="w-6 h-6 text-[#63316b]" />,
-      title: "Long-lasting and cost-effective",
-      description: "Durable results that provide great value"
+      title: "Long lasting cosmetic dental treatment.",
+      description: "Enjoy durable, long-lasting results from your veneers.",
     },
-    {
-      icon: <Syringe className="w-6 h-6 text-[#63316b]" />,
-      title: "Pain-free and minimally invasive",
-      description: "Comfortable treatment with minimal preparation"
-    }
   ];
 
   const recapBenefits = [
     "An instant smile boost",
-    "Natural shade correction", 
+    "Natural shade correction",
     "Blending with your original teeth",
-    "Comfortable, long-lasting results"
+    "Comfortable, long-lasting results",
   ];
 
   const imperfections = [
     "Cracks",
-    "Discolouration", 
+    "Discolouration",
     "Small gaps",
-    "Irregular shapes"
+    "Irregular shapes",
   ];
 
   const faqs = [
     {
-      question: "Are veneers right for me?",
-      answer: "If you want to enhance your smile and cover visible flaws, veneers are an ideal choice. Book a FREE consult to explore your options."
+      question: "Are veneers for me?",
+      answer:
+        "If you would like to restore the appearance of your teeth, then look no further than veneers from Coventry Road Dental Care. Request a FREE consultation appointment with our treatment coordinator to discuss if veneers are the best solution for you.",
     },
     {
       question: "How do veneers work?",
-      answer: "A thin shell of porcelain is bonded to the front of your tooth to instantly enhance shape, shade, and alignment — often with no injections or drilling."
+      answer:
+        "Veneers are thin shells of ceramic/porcelain for teeth. A veneer is bonded to the front of your existing tooth, with little to no further preparation or treatment needed on the tooth itself, making veneers kinder to teeth than some other cosmetic treatments.",
     },
     {
       question: "Am I suitable for veneers?",
-      answer: "If you're not a perfect candidate, don't worry — we'll help you find an alternative solution that meets your smile goals."
-    }
+      answer:
+        "Everyone is different and if you are not suitable for veneers, we promise to do all we can to find an alternative treatment to restore your smile. We encourage you to come along and visit one of our talented dentists and discover how we can achieve the smile you desire.",
+    },
   ];
 
   return (
@@ -85,11 +108,12 @@ const Veneers = () => {
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6 animate-fadeInUp">
-                Restore Your Smile with{' '}
+                Restore Your Smile with{" "}
                 <span className="text-[#63316b]">Veneers</span> in Coventry
               </h1>
               <p className="text-xl lg:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto animate-fadeInUp">
-                A quick, pain-free and elegant way to correct chips, cracks, discolouration, and gaps.
+                A quick, pain-free and elegant way to correct chips, cracks,
+                discolouration, and gaps.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp">
                 <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
@@ -110,30 +134,31 @@ const Veneers = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                  Say Goodbye to Imperfections
+                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 animate-fadeInUp">
+                  What is <span className="text-[#63316b]">Veneers ?</span>
                 </h2>
                 <div className="prose prose-lg text-gray-700 space-y-4">
                   <p>
-                    Veneers are thin porcelain or ceramic shells bonded to the surface of your teeth to mask imperfections like:
+                    If you've a cracked, discoloured, or unsightly tooth or a
+                    niggling gap in your smile line that bothers you, veneers
+                    might be the answer.
                   </p>
-                  <ul className="space-y-2 mt-4">
-                    {imperfections.map((imperfection, index) => (
-                      <li key={index} className="flex items-center space-x-2">
-                        <CheckCircle className="w-5 h-5 text-[#63316b]" />
-                        <span>{imperfection}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="mt-6">
-                    They require minimal preparation and preserve more of your natural tooth structure than other cosmetic treatments.
+                  <p>
+                    Veneers are sheets of porcelain that are carefully bonded to
+                    the surface of a natural tooth to mask imperfections in the
+                    enamel or improve the position and appearance.
+                  </p>
+                  <p>
+                    Veneers often require much less preparation of the natural
+                    tooth tissue helping preserve much more of what nature gave
+                    you.
                   </p>
                 </div>
               </div>
               <div>
-                <img 
-                  src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                  alt="Before and after veneer treatment" 
+                <img
+                  src="services/Veneers/veneers.jpg"
+                  alt="Before and after veneer treatment"
                   className="w-full h-96 object-cover rounded-2xl shadow-lg"
                 />
               </div>
@@ -146,18 +171,26 @@ const Veneers = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                Why Patients Love Veneers
+                Why Have This Treatment With Us?
               </h2>
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto mt-4">
+                Veneers are thin ceramic or porcelain layers that instantly
+                improve your smile by fixing misalignment, gaps, and
+                imperfections.
+              </p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {benefits.map((benefit, index) => (
-                <div key={index} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div
+                  key={index}
+                  className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+                >
                   <div className="flex items-start space-x-4">
-                    <div className="flex-shrink-0">
-                      {benefit.icon}
-                    </div>
+                    <div className="flex-shrink-0">{benefit.icon}</div>
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-900 mb-2">{benefit.title}</h3>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                        {benefit.title}
+                      </h3>
                       <p className="text-gray-600">{benefit.description}</p>
                     </div>
                   </div>
@@ -171,9 +204,13 @@ const Veneers = () => {
         <section className="py-16 bg-[#63316b] text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <blockquote className="text-2xl lg:text-3xl font-light italic mb-6">
-              "We believe in preserving the beauty nature gave you, not replacing it — that's why our veneer approach is minimally invasive and individually tailored."
+              "We believe in preserving the beauty nature gave you, not
+              replacing it — that's why our veneer approach is minimally
+              invasive and individually tailored."
             </blockquote>
-            <cite className="text-lg opacity-90 mb-8 block">— Coventry Road Dental Team</cite>
+            <cite className="text-lg opacity-90 mb-8 block">
+              — Coventry Road Dental Team
+            </cite>
             <button className="bg-white text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 inline-flex items-center space-x-2">
               <Heart className="w-5 h-5" />
               <span>Speak to Our Smile Consultant</span>
@@ -191,7 +228,11 @@ const Veneers = () => {
             </div>
             <Accordion type="single" collapsible className="space-y-4">
               {faqs.map((faq, index) => (
-                <AccordionItem key={index} value={`item-${index}`} className="bg-white rounded-lg shadow-sm border">
+                <AccordionItem
+                  key={index}
+                  value={`item-${index}`}
+                  className="bg-white rounded-lg shadow-sm border"
+                >
                   <AccordionTrigger className="px-6 py-4 text-left font-semibold text-gray-900 hover:no-underline">
                     {faq.question}
                   </AccordionTrigger>
@@ -204,46 +245,29 @@ const Veneers = () => {
           </div>
         </section>
 
-        {/* Benefits Recap Section */}
-        <section className="py-16 bg-gray-50">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Thin layers of white ceramic or porcelain deliver:
-            </h2>
-            <div className="grid sm:grid-cols-2 gap-6 mb-8">
-              {recapBenefits.map((benefit, index) => (
-                <div key={index} className="flex items-center justify-center space-x-3 bg-white p-4 rounded-lg shadow-sm">
-                  <CheckCircle className="w-5 h-5 text-[#63316b]" />
-                  <span className="text-gray-700 font-medium">{benefit}</span>
-                </div>
-              ))}
-            </div>
-            <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
-              <Phone className="w-5 h-5" />
-              <span>Let's Talk Veneers</span>
-            </button>
-          </div>
-        </section>
-
         {/* Service Tiles */}
         <ServiceTiles />
 
         {/* Final CTA Section */}
-        <section className="py-16 bg-gradient-to-r from-[#63316b] to-[#63316b]/90 text-white">
+       <section className="py-16 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-              <h3 className="text-2xl font-semibold mb-4">
-                Thinking about veneers but unsure if you qualify?
+            <div className="bg-[#63316b]/5 rounded-2xl p-8 border border-[#63316b]/10 shadow-md">
+              <h3 className="text-2xl font-semibold mb-4 text-[#63316b]">
+                Ready to Transform Your Smile?
               </h3>
-              <p className="text-lg mb-6 opacity-90">
-                Let's chat or book a no-pressure free consultation.
+              <p className="text-lg mb-6 text-gray-700 opacity-90">
+                Book your free consultation today and discover how composite
+                bonding can enhance your smile.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-white text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 inline-flex items-center space-x-2">
+                <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
                   <Calendar className="w-5 h-5" />
                   <span>Book Free Consultation</span>
                 </button>
-                <Link to="/" className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-[#63316b] transition-all duration-300 inline-flex items-center space-x-2">
+                <Link
+                  to="/"
+                  className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2"
+                >
                   <ArrowRight className="w-5 h-5" />
                   <span>Back to Home</span>
                 </Link>
