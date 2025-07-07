@@ -1,51 +1,87 @@
-import { useState } from 'react';
-import { Phone, Mail, Calendar, Play, ChevronLeft, ChevronRight, Eye, Utensils, Clock, Smile, Shield, User, CheckCircle, Users, Heart, Star, MessageCircle, DollarSign, MapPin } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import ServiceTiles from '../components/ServiceTiles';
+import { useState } from "react";
+import {
+  Phone,
+  Mail,
+  Calendar,
+  Play,
+  ChevronLeft,
+  ChevronRight,
+  Eye,
+  Utensils,
+  Clock,
+  Smile,
+  Shield,
+  User,
+  CheckCircle,
+  Users,
+  Heart,
+  Star,
+  MessageCircle,
+  DollarSign,
+  MapPin,
+} from "lucide-react";
+import { Link } from "react-router-dom";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import ServiceTiles from "../components/ServiceTiles";
 
 const InvisalignBraces = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
   const journeySteps = [
-    { 
-      image: '/lovable-uploads/299453f5-63b1-4193-8164-955b3504b4b8.png', 
-      caption: 'Detailed Digital Scan',
-      description: 'Advanced 3D scanning technology captures every detail of your teeth alignment'
+    {
+      image: "/lovable-uploads/299453f5-63b1-4193-8164-955b3504b4b8.png",
+      caption: "Detailed Digital Scan",
+      description:
+        "Advanced 3D scanning technology captures every detail of your teeth alignment",
     },
-    { 
-      image: '/lovable-uploads/9ca20df0-a984-4c24-bec5-dfa24a26b9ff.png', 
-      caption: 'Custom Clear Aligners',
-      description: 'Your personalised Invisalign aligners are precisely crafted for your treatment'
-    }
+    {
+      image: "/lovable-uploads/9ca20df0-a984-4c24-bec5-dfa24a26b9ff.png",
+      caption: "Custom Clear Aligners",
+      description:
+        "Your personalised Invisalign aligners are precisely crafted for your treatment",
+    },
   ];
 
   const benefits = [
-    { icon: Eye, title: 'Virtually invisible clear aligners' },
-    { icon: Utensils, title: 'Removable for eating and brushing' },
-    { icon: Clock, title: 'Predictable results with digital planning' },
-    { icon: Shield, title: 'No food restrictions' },
-    { icon: Smile, title: 'Comfortable and smooth edges' },
-    { icon: User, title: 'Led by experienced dentists' }
+    { icon: Smile, title: "Straighten your teeth discreetly" },
+    { icon: Star, title: "Achieve a beautiful straight smile" },
+    {
+      icon: Eye,
+      title: "Clear aligners are virtually invisible and comfortable",
+    },
+    {
+      icon: Utensils,
+      title: "Your Invisalign aligners can be removed for eating and brushing",
+    },
+    {
+      icon: CheckCircle,
+      title:
+        "Brace treatment transforms crowded, twisted, crossed and protruding teeth",
+    },
+    {
+      icon: DollarSign,
+      title: "Great value systems that are convenient and safe",
+    },
+    { icon: Users, title: "Experienced and passionate dentists" },
   ];
 
   const conditions = [
-    { icon: CheckCircle, title: 'Crowded Teeth' },
-    { icon: CheckCircle, title: 'Twisted or Rotated Teeth' },
-    { icon: CheckCircle, title: 'Crossbite' },
-    { icon: CheckCircle, title: 'Overbite or Underbite' },
-    { icon: CheckCircle, title: 'Gapped Teeth' },
-    { icon: CheckCircle, title: 'Protruding Front Teeth' }
+    { icon: CheckCircle, title: "Crowded Teeth" },
+    { icon: CheckCircle, title: "Twisted or Rotated Teeth" },
+    { icon: CheckCircle, title: "Crossbite" },
+    { icon: CheckCircle, title: "Overbite or Underbite" },
+    { icon: CheckCircle, title: "Gapped Teeth" },
+    { icon: CheckCircle, title: "Protruding Front Teeth" },
   ];
 
   const whyChooseUs = [
-    { icon: Calendar, title: 'FREE consultations, no pressure' },
-    { icon: Users, title: 'Invisalign-trained, passionate team' },
-    { icon: Smile, title: 'Focused on discreet and confident transformation' },
-    { icon: DollarSign, title: 'Great value, flexible finance options' },
-    { icon: MapPin, title: 'Local care with a personal touch' }
+    { icon: Calendar, title: "FREE consultations, no pressure" },
+    { icon: Users, title: "Invisalign-trained, passionate team" },
+    { icon: Smile, title: "Focused on discreet and confident transformation" },
+    { icon: DollarSign, title: "Great value, flexible finance options" },
+    { icon: MapPin, title: "Local care with a personal touch" },
   ];
 
   const nextSlide = () => {
@@ -53,7 +89,9 @@ const InvisalignBraces = () => {
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + journeySteps.length) % journeySteps.length);
+    setCurrentSlide(
+      (prev) => (prev - 1 + journeySteps.length) % journeySteps.length
+    );
   };
 
   const handleVideoPlay = () => {
@@ -63,20 +101,29 @@ const InvisalignBraces = () => {
   return (
     <>
       <Header />
-      
+
       {/* Hero Section with Parallax */}
       <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-white overflow-hidden">
         <div className="absolute inset-0 bg-[url('/placeholder.svg')] bg-cover bg-center opacity-10"></div>
-        
+
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-6 animate-fadeInUp">
-            Align Your Smile with Invisalign Braces in Coventry
+          <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
+            Align your Smile with{" "}
+            <span className="text-[#63316b]">Invisalign Braces</span> in
+            Coventry
           </h1>
-          <p className="text-2xl text-gray-600 mb-8 animate-fadeInUp" style={{animationDelay: '0.2s'}}>
-            Discreet, removable, and virtually invisible aligners for a confident smile — without the metal.
+          <p
+            className="text-2xl text-gray-600 mb-8 animate-fadeInUp"
+            style={{ animationDelay: "0.2s" }}
+          >
+            Discreet, removable, and virtually invisible aligners for a
+            confident smile — without the metal.
           </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp" style={{animationDelay: '0.4s'}}>
+
+          <div
+            className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp"
+            style={{ animationDelay: "0.4s" }}
+          >
             <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2 shadow-lg hover:shadow-xl">
               <Calendar className="w-5 h-5" />
               <span>Book a Free Consultation</span>
@@ -94,32 +141,40 @@ const InvisalignBraces = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Straighten Your Teeth Without Brackets or Wires
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 animate-fadeInUp">
+                Straighten Your Smile with{" "}
+                <span className="text-[#63316b]">No Brackets or Wires</span>
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                Misaligned teeth can affect your confidence, and traditional braces aren't for everyone. At Coventry Road Dentalcare, we offer Invisalign – the clear solution to straighter teeth for adults and teens.
+                Misaligned teeth can affect your confidence, and traditional
+                braces aren't for everyone. At Coventry Road Dentalcare, we
+                offer Invisalign – the clear solution to straighter teeth for
+                adults and teens.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
-                Using advanced 3D imaging, we can show you your final smile even before your treatment begins.
+                Using advanced 3D imaging, we can show you your final smile even
+                before your treatment begins.
               </p>
             </div>
-            
+
             <div className="lg:pl-8">
               <div className="bg-gray-100 rounded-2xl p-8 h-96 flex items-center justify-center relative">
                 {!isVideoPlaying ? (
                   <>
-                    <img 
-                      src="/lovable-uploads/b36a9abe-94d8-4d84-bfc4-8cfa96f50a54.png" 
+                    <img
+                      src="/lovable-uploads/b36a9abe-94d8-4d84-bfc4-8cfa96f50a54.png"
                       alt="Invisalign aligners"
                       className="w-full h-full object-cover rounded-lg"
                     />
                     <div className="absolute inset-0 flex items-center justify-center bg-black/20 rounded-lg">
-                      <button 
+                      <button
                         onClick={handleVideoPlay}
                         className="w-20 h-20 bg-[#63316b] rounded-full flex items-center justify-center hover:bg-[#63316b]/90 transition-all duration-300 group shadow-lg"
                       >
-                        <Play className="w-8 h-8 text-white ml-1 group-hover:scale-110 transition-transform" fill="currentColor" />
+                        <Play
+                          className="w-8 h-8 text-white ml-1 group-hover:scale-110 transition-transform"
+                          fill="currentColor"
+                        />
                       </button>
                     </div>
                   </>
@@ -141,57 +196,39 @@ const InvisalignBraces = () => {
         </div>
       </section>
 
-      {/* Journey Carousel */}
+      {/* Journey Carousel (now Benefits of Invisalign) */}
       <section className="py-20 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">From Scan to Smile</h2>
-            <p className="text-xl text-gray-600">Your Invisalign journey walkthrough</p>
-          </div>
-          
-          <div className="relative">
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-              <div className="p-6">
-                <img 
-                  src={journeySteps[currentSlide].image} 
-                  alt={journeySteps[currentSlide].caption}
-                  className="w-full h-80 object-cover rounded-lg mb-6"
-                />
-                <div className="text-center">
-                  <h3 className="text-2xl font-semibold text-[#63316b] mb-3">
-                    {journeySteps[currentSlide].caption}
-                  </h3>
-                  <p className="text-gray-600">
-                    {journeySteps[currentSlide].description}
-                  </p>
-                </div>
-              </div>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left: Static Image only */}
+            <div className="flex justify-center items-center order-1 lg:order-none">
+              <img
+                src={journeySteps[0].image}
+                alt={journeySteps[0].caption}
+                className="w-full max-w-md h-80 object-cover rounded-2xl shadow-lg"
+              />
             </div>
-            
-            <button 
-              onClick={prevSlide}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 transition-colors"
-            >
-              <ChevronLeft className="w-6 h-6 text-gray-600" />
-            </button>
-            <button 
-              onClick={nextSlide}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 transition-colors"
-            >
-              <ChevronRight className="w-6 h-6 text-gray-600" />
-            </button>
-            
-            {/* Slide indicators */}
-            <div className="flex justify-center mt-6 space-x-2">
-              {journeySteps.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-colors ${
-                    index === currentSlide ? 'bg-[#63316b]' : 'bg-gray-300'
-                  }`}
-                />
-              ))}
+            {/* Right: Text only */}
+            <div>
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 animate-fadeInUp">
+                The <span className="text-[#63316b]">Benefits</span> of
+                Invisalign
+              </h2>
+              <p className="text-lg text-gray-700 leading-relaxed mb-8">
+                Invisalign treatment is a virtually invisible way to straighten
+                your teeth. Using advanced 3D computer-imaging technology,
+                Invisalign shows you your transformed smile from start to finish
+                before you even start the treatment! With your approval a series
+                of clear aligners are then custom-made for your teeth to move
+                them little by little.
+                <br />
+                <br />
+                Each aligner is worn for around two weeks before being replaced
+                by the next in the series, gradually moving towards the desired
+                final position. The treatment time depends on how complex your
+                case is but your Invisalign provider will give you an estimated
+                timeline.
+              </p>
             </div>
           </div>
         </div>
@@ -201,84 +238,36 @@ const InvisalignBraces = () => {
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Invisalign?</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 animate-fadeInUp">
+              Why Choose <span className="text-[#63316b]">Invisalign?</span>
+            </h2>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="bg-gray-50 rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 group hover:bg-[#63316b] hover:text-white">
-                <div className="mb-4 group-hover:scale-110 transition-transform">
-                  <benefit.icon className="w-8 h-8 text-[#63316b] group-hover:text-white mx-auto" />
+            {benefits.map((benefit, index) => {
+              // Center the last card if it's alone in the last row (not a multiple of 3)
+              const isLast = index === benefits.length - 1;
+              const needsCenter = benefits.length % 3 !== 0 && isLast;
+              return (
+                <div
+                  key={index}
+                  className={
+                    `bg-gray-50 rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 group hover:bg-[#63316b] hover:text-white` +
+                    (needsCenter
+                      ? " lg:col-span-3 flex flex-col items-center justify-center"
+                      : "")
+                  }
+                >
+                  <div className="mb-4 group-hover:scale-110 transition-transform">
+                    <benefit.icon className="w-8 h-8 text-[#63316b] group-hover:text-white mx-auto" />
+                  </div>
+                  <p className="font-medium group-hover:text-white">
+                    {benefit.title}
+                  </p>
                 </div>
-                <p className="font-medium group-hover:text-white">
-                  {benefit.title}
-                </p>
-              </div>
-            ))}
+              );
+            })}
           </div>
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Invisalign in 3 Easy Steps</h2>
-          </div>
-          
-          <div className="space-y-12">
-            <div className="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8">
-              <div className="flex-shrink-0">
-                <div className="w-16 h-16 bg-[#63316b] text-white rounded-full flex items-center justify-center text-2xl font-bold">
-                  1
-                </div>
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">FREE Consultation</h3>
-                <p className="text-lg text-gray-700">
-                  Meet our Invisalign dentist for a relaxed chat. We'll discuss your concerns and scan your teeth using 3D iTero tech.
-                </p>
-              </div>
-            </div>
-            
-            <div className="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8">
-              <div className="flex-shrink-0">
-                <div className="w-16 h-16 bg-[#63316b] text-white rounded-full flex items-center justify-center text-2xl font-bold">
-                  2
-                </div>
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">Preview Your Future Smile</h3>
-                <p className="text-lg text-gray-700">
-                  Get a digital simulation of how your teeth will look after treatment — before we even begin.
-                </p>
-              </div>
-            </div>
-            
-            <div className="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8">
-              <div className="flex-shrink-0">
-                <div className="w-16 h-16 bg-[#63316b] text-white rounded-full flex items-center justify-center text-2xl font-bold">
-                  3
-                </div>
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">Start Your Smile Journey</h3>
-                <p className="text-lg text-gray-700">
-                  Receive your custom clear aligners. Wear each set for 2 weeks, changing gradually as your teeth shift into perfect position.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonial Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <blockquote className="text-2xl font-light italic text-gray-700 mb-8">
-            "I didn't want metal braces as an adult — Invisalign gave me the smile I dreamed of without anyone even noticing."
-          </blockquote>
-          <p className="text-lg text-gray-500">— Real Patient Review</p>
         </div>
       </section>
 
@@ -286,48 +275,31 @@ const InvisalignBraces = () => {
       <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Is Invisalign Right for You?</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 animate-fadeInUp">
+              Is <span className="text-[#63316b]">Invisalign</span> Right for
+              You?
+            </h2>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {conditions.map((condition, index) => (
-              <div key={index} className="bg-white rounded-2xl p-6 hover:shadow-lg transition-all duration-300 flex items-center space-x-4">
+              <div
+                key={index}
+                className="bg-white rounded-2xl p-6 hover:shadow-lg transition-all duration-300 flex items-center space-x-4"
+              >
                 <div className="flex-shrink-0">
                   <condition.icon className="w-6 h-6 text-[#63316b]" />
                 </div>
-                <p className="font-medium text-gray-900">
-                  {condition.title}
-                </p>
+                <p className="font-medium text-gray-900">{condition.title}</p>
               </div>
             ))}
           </div>
-          
+
           <div className="text-center mt-8">
             <p className="text-lg text-gray-600">
-              Our dentists will recommend the best clear system for your case — safe, affordable, and discreet.
+              Our dentists will recommend the best clear system for your case —
+              safe, affordable, and discreet.
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Coventry Road Dentalcare?</h2>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {whyChooseUs.map((reason, index) => (
-              <div key={index} className="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 flex items-center space-x-4">
-                <div className="flex-shrink-0">
-                  <reason.icon className="w-6 h-6 text-[#63316b]" />
-                </div>
-                <p className="font-medium text-gray-900">
-                  {reason.title}
-                </p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -335,11 +307,15 @@ const InvisalignBraces = () => {
       {/* Final CTA */}
       <section className="py-20 bg-[#63316b] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-6">Straight Teeth May Be a Phone Call Away</h2>
+          <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+            Straight Teeth May Be a{" "}
+            <span className="text-white underline">Phone Call Away</span>
+          </h2>
           <p className="text-xl mb-8 opacity-90">
-            We're here to help you smile again — book your free consultation today.
+            We're here to help you smile again — book your free consultation
+            today.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-white text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 inline-flex items-center space-x-2">
               <Phone className="w-5 h-5" />
