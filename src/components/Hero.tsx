@@ -34,13 +34,12 @@ const Hero = () => {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 leading-tight">
-              Transform Your Smile in{" "}
+              Dentist in{" "}
               <span className="gradient-text">Coventry</span>
             </h1>
 
             <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-xl">
-              Expert dental care with advanced technology. Same-day appointments
-              available. NHS & Private options.
+             Dentists in Coventry that deliver happier, healthier smiles
             </p>
 
             {/* Primary CTA */}
