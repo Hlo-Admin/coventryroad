@@ -46,24 +46,24 @@ const WhiteFillings = () => {
     }
   ];
 
-  const faqs = [
+ const faqs = [
     {
       question: "What are white fillings made from?",
-      answer: "A high-quality composite resin that can be shaped and colour-matched to blend perfectly with your natural teeth."
+      answer: "A material called composite resin that can be moulded to the exact shape and colour of your tooth."
     },
     {
-      question: "Are white fillings right for me?",
-      answer: "If you're looking for a mercury-free, natural-looking option, composite fillings may be a great choice. Book a consultation to explore what's best for you."
+      question: "Are white fillings for me?",
+      answer: "If you prefer the natural look of mercury-free fillings, white fillings may be an option for you. Call us on 02476312256 or email us at reception@deoldental.com and our friendly team will be on hand to discuss the options and help you decide what's right for you."
     },
     {
-      question: "Can anyone get white fillings?",
-      answer: "Yes — they're available for everyone, depending on the size and location of the filling. We'll assess your suitability at your appointment."
+      question: "Can anybody have white fillings?",
+      answer: "Yes, composite fillings are available for everyone, depending on your needs, which we can discuss during your appointment."
     },
     {
-      question: "Can I replace my metal fillings?",
-      answer: "Possibly. While we don't always recommend removing healthy amalgam fillings, we'll guide you through the pros and cons and suggest what's right for you."
+      question: "Can I replace my amalgam fillings with white ones?",
+      answer: "That's something you should discuss with your dentist. It is not always the right decision to remove perfectly good, existing amalgam fillings. We would be happy to discuss your needs and agree solutions that improve the look of your smile."
     }
-  ];
+];
 
   return (
     <>
@@ -80,9 +80,9 @@ const WhiteFillings = () => {
             <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
               {/* Content - Left Side */}
               <div className="space-y-8">
-                <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                  Natural. Safe. Seamless.{' '}
-                  <span className="text-[#63316b]">White Fillings</span> in Coventry
+              <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                  Restore Your Smile with{" "}
+                  <span className="text-[#63316b]">White Filling</span> <br /> in Coventry
                 </h1>
                 <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed">
                   A mercury-free solution that blends beautifully with your natural teeth.
@@ -101,59 +101,42 @@ const WhiteFillings = () => {
               
               {/* Hero Image - Right Side - Optimized for mobile */}
               <div className="relative">
-                <div className="aspect-square lg:aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
-                  <img 
-                    src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=600&h=600&fit=crop" 
-                    alt="Natural white filling dental treatment"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+             <div className="flex justify-center items-center order-1 lg:order-2">
+                <img
+                  src="/services/white filling/hero.jpg"
+                  alt="Dentures hero"
+                  className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 object-cover rounded-3xl shadow-2xl border border-white/20 bg-gradient-to-br from-[#63316b]/10 to-purple-100"
+                />
+              </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* What Are White Fillings Section - with optimized image */}
-        <section className="py-16 lg:py-24">
+       <section className="py-16 lg:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                A Modern, Natural-Looking Alternative to Metal Fillings
-              </h2>
-            </div>
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6">
-                <p className="text-lg text-gray-700">
-                  In the past, fillings were made of silver-coloured amalgam, which often showed when you smiled or laughed.
-                </p>
-                <p className="text-lg text-gray-700">Today, our tooth-coloured composite fillings offer:</p>
-                <ul className="space-y-3 text-gray-700">
-                  <li className="flex items-center space-x-3">
-                    <CheckCircle className="w-5 h-5 text-[#63316b] flex-shrink-0" />
-                    <span>A natural look that matches your teeth</span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <CheckCircle className="w-5 h-5 text-[#63316b] flex-shrink-0" />
-                    <span>Strong, reliable restoration</span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <CheckCircle className="w-5 h-5 text-[#63316b] flex-shrink-0" />
-                    <span>Mercury-free safety and aesthetics</span>
-                  </li>
-                </ul>
-                <p className="text-gray-600 italic">
-                  Though they take a little longer to place than silver fillings, the results speak for themselves — discreet, durable, and beautiful.
-                </p>
-              </div>
-              {/* Optimized image section */}
-              <div className="relative">
-                <div className="glass bg-white/80 backdrop-blur-sm rounded-3xl p-2 border border-white/20 shadow-xl">
-                  <img 
-                    src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&h=400&fit=crop" 
-                    alt="Before and after white filling comparison"
-                    className="w-full h-48 sm:h-64 lg:h-80 rounded-2xl object-cover"
-                  />
+              <div>
+                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+                  What are White Filling?
+                </h2>
+                <div className="prose prose-lg text-gray-700 space-y-4">
+                  <p>
+                In the past, fillings were made of silver-coloured amalgam, but this material offers one big disadvantage – it doesn’t resemble your natural teeth in appearance, which might cause you to feel self-conscious when smiling or laughing.
+                  </p>
+                  <p>
+                 Tooth-coloured composite fillings are a fast and simple way of restoring your teeth and giving them a more natural look. Composite fillings are more difficult to place than silver fillings so may take your dentist slightly longer to complete.
+                  </p>
+                
                 </div>
+              </div>
+              <div>
+                <img
+                  src="/services/white filling/filling.jpg"
+                  alt="Dental implant procedure"
+                  className="w-full h-96 object-cover rounded-2xl shadow-lg"
+                />
               </div>
             </div>
           </div>
