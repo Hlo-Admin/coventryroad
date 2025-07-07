@@ -9,6 +9,7 @@ import {
   DollarSign,
   Syringe,
   Heart,
+  Wrench,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
@@ -32,37 +33,46 @@ const Veneers = () => {
 
   const benefits = [
     {
-      icon: <Smile className="w-6 h-6 text-[#63316b]" />,
-      title: "Enhance your natural smile line.",
-      description:
-        "Veneers are designed to enhance the natural curve and appearance of your smile.",
-    },
-    {
-      icon: <Sparkles className="w-6 h-6 text-[#63316b]" />,
-      title: "Gives an instant boost to your smile.",
-      description: "Get a brighter, more confident smile in just a few visits.",
-    },
-    {
       icon: <CheckCircle className="w-6 h-6 text-[#63316b]" />,
-      title: "Improves natural colour of teeth.",
+      title: "Replace a missing tooth or teeth.",
       description:
-        "Veneers can improve the shade and brightness of your teeth.",
+        "Restore your smile and confidence by filling gaps with natural-looking replacements.",
+    },
+    {
+      icon: <Smile className="w-6 h-6 text-[#63316b]" />,
+      title: "Restore the mouth's function.",
+      description:
+        "Eat, speak, and smile comfortably with a fully functional set of teeth.",
     },
     {
       icon: <Shield className="w-6 h-6 text-[#63316b]" />,
-      title: "Blends in with your original teeth.",
+      title: "Provide a secure anchor for dentures & bridges.",
       description:
-        "Custom-crafted to blend seamlessly with your natural teeth.",
+        "Enjoy a stable, secure fit for dentures and bridges with dental implants.",
+    },
+    {
+      icon: <Sparkles className="w-6 h-6 text-[#63316b]" />,
+      title: "Highly qualified implant dentist.",
+      description:
+        "Benefit from the expertise of our experienced implant team for safe, predictable results.",
     },
     {
       icon: <Heart className="w-6 h-6 text-[#63316b]" />,
-      title: "Pain-free treatment.",
-      description: "The procedure is comfortable and minimally invasive.",
+      title: "Prevent that caved in look often seen with missing teeth.",
+      description:
+        "Maintain your natural facial structure and prevent premature aging.",
     },
     {
       icon: <DollarSign className="w-6 h-6 text-[#63316b]" />,
-      title: "Long lasting cosmetic dental treatment.",
-      description: "Enjoy durable, long-lasting results from your veneers.",
+      title: "The most cost-effective, long-lasting solution to missing teeth.",
+      description:
+        "Dental implants are a durable investment that can last a lifetime with proper care.",
+    },
+    {
+      icon: <Wrench className="w-6 h-6 text-[#63316b]" />,
+      title: "Prevent bone loss.",
+      description:
+        "Implants stimulate the jawbone, helping to prevent bone loss and preserve oral health.",
     },
   ];
 
@@ -249,7 +259,7 @@ const Veneers = () => {
         <ServiceTiles />
 
         {/* Final CTA Section */}
-       <section className="py-16 bg-white">
+        <section className="py-16 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="bg-[#63316b]/5 rounded-2xl p-8 border border-[#63316b]/10 shadow-md">
               <h3 className="text-2xl font-semibold mb-4 text-[#63316b]">
