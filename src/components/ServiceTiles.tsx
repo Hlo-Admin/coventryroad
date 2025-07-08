@@ -9,57 +9,41 @@ const ServiceTiles = () => {
   const services = [
     {
       title: "Full Arch Implants",
-      description:
-        "Complete smile restoration with permanent, natural-looking teeth in just one day.",
       image: "/home/services/Full Arch Implants.jpg",
       path: "/full-arch-implants",
     },
     {
       title: "Composite Bonding",
-      description:
-        "Transform your smile with natural-looking tooth-colored resin in a single visit.",
       image: "/home/services/Composite Bonding.jpg",
       path: "/composite-bonding",
     },
     {
       title: "Invisalign Braces",
-      description:
-        "Straighten your teeth discreetly with virtually invisible, removable aligners.",
       image: "/home/services/Invisalign Braces.webp",
       path: "/invisalign-braces",
     },
     {
       title: "Teeth Whitening",
-      description:
-        "Achieve a brighter, more confident smile with professional whitening treatments.",
       image: "/home/services/Teeth Whitening.jpg",
       path: "/teeth-whitening",
     },
     {
       title: "Veneers",
-      description:
-        "Transform your smile with ultra-thin, custom-crafted porcelain shells.",
       image: "/home/services/Veneers.jpg",
       path: "/veneers",
     },
     {
       title: "Dental Implants",
-      description:
-        "Permanent tooth replacement that looks, feels, and functions like natural teeth.",
       image: "/home/services/Dental Implants.jpg",
       path: "/dental-implants",
     },
     {
       title: "Dentures",
-      description:
-        "Comfortable, natural-looking removable teeth replacement solutions.",
       image: "/home/services/Dentures.jpg",
       path: "/dentures",
     },
     {
       title: "White Fillings",
-      description:
-        "Natural-looking, mercury-free composite fillings that blend seamlessly.",
       image: "/home/services/White Fillings.jpg",
       path: "/white-fillings",
     },
@@ -141,9 +125,9 @@ const ServiceTiles = () => {
             <Link
               key={index}
               to={service.path}
-              className="group flex-none w-80 h-[420px]" // Fixed width and height for all cards
+              className="group flex-none w-80 h-[340px]" // Fixed width and height for all cards
             >
-              <div className="relative overflow-hidden bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-200 w-80 h-[420px] flex flex-col">
+              <div className="relative overflow-hidden bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-200 w-80 h-[340px] flex flex-col">
                 {/* Background Image */}
                 <div className="h-48 w-full overflow-hidden flex-shrink-0">
                   <img
@@ -162,9 +146,6 @@ const ServiceTiles = () => {
                       </h3>
                       <ArrowRight className="w-5 h-5 text-[#63316b] group-hover:translate-x-1 transition-transform" />
                     </div>
-                    <p className="text-gray-600 text-sm">
-                      {service.description}
-                    </p>
                   </div>
                 </div>
               </div>

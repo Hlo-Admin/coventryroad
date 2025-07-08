@@ -30,66 +30,6 @@ const CompositeBonding = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const benefits = [
-    {
-      icon: <Sparkles className="w-6 h-6 text-[#63316b]" />,
-      title: "Natural-looking results",
-      description: "Seamlessly blends with your existing teeth",
-    },
-    {
-      icon: <Smile className="w-6 h-6 text-[#63316b]" />,
-      title: "Quick and painless",
-      description: "Usually completed in a single visit",
-    },
-    {
-      icon: <CheckCircle className="w-6 h-6 text-[#63316b]" />,
-      title: "Fixes multiple issues",
-      description: "Chips, cracks, gaps, and discoloration",
-    },
-    {
-      icon: <Shield className="w-6 h-6 text-[#63316b]" />,
-      title: "Preserves tooth structure",
-      description: "Minimally invasive treatment approach",
-    },
-    {
-      icon: <DollarSign className="w-6 h-6 text-[#63316b]" />,
-      title: "Cost-effective solution",
-      description: "Affordable alternative to veneers",
-    },
-    {
-      icon: <Syringe className="w-6 h-6 text-[#63316b]" />,
-      title: "No anesthesia needed",
-      description: "Comfortable treatment experience",
-    },
-  ];
-
-  const faqs = [
-    {
-      question: "Why would I want composite bonding?",
-      answer:
-        "Composite bonding is usually used when a patient has fractured their tooth or chipped the edges of their teeth. It's also ideal if you dislike the gaps between your teeth or want to fix discolouration. If you are self-conscious about the way your teeth look or want a more cosmetic appearance, composite bonding is a great option.",
-    },
-    {
-      question: "What are the advantages of composite bonding?",
-      answer:
-        "Composite bonding is a non-invasive treatment that can be reversed. It's also more cost effective than other cosmetic treatments, such as veneers or crowns. Achieving your desired look will give you the confidence to smile again without feeling self-conscious. Composite bonding starts from as little as £250 per tooth, and we offer a FREE consultation with our treatment coordinator to discuss your personalised treatment plan.",
-    },
-    {
-      question: "Is composite bonding right for me?",
-      answer:
-        "Composite bonding is ideal for minor cosmetic improvements like small chips, gaps, or discoloration. Book a consultation to see if it's the right solution for your needs.",
-    },
-    {
-      question: "How long does composite bonding last?",
-      answer:
-        "With proper care, composite bonding can last 3-10 years. Regular dental check-ups and good oral hygiene will help extend its lifespan.",
-    },
-    {
-      question: "Does composite bonding require special care?",
-      answer:
-        "Maintain good oral hygiene and avoid biting hard objects. The bonded teeth can be cared for just like your natural teeth with regular brushing and flossing.",
-    },
-  ];
 
   return (
     <>
@@ -99,15 +39,13 @@ const CompositeBonding = () => {
         <section className="relative bg-gradient-to-br from-gray-50 to-white py-20 lg:py-32 overflow-hidden">
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6 animate-fadeInUp">
-                <span className="text-[#63316b]">Composite Bonding</span> in
-                Coventry
+              <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                Restore Your Smile with{" "}
+                <span className="text-[#63316b] block">Composite Bonding</span>
+                in Coventry
               </h1>
-              <p className="text-xl lg:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto animate-fadeInUp">
-                Fix chips, cracks, gaps and discoloration with our tooth-colored
-                composite resin treatment.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp">
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp pt-16">
                 <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
                   <Phone className="w-5 h-5" />
                   <span>Request a Callback</span>
@@ -129,7 +67,7 @@ const CompositeBonding = () => {
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
                   What is Composite Bonding?
                 </h2>
-                <div className="prose prose-lg text-gray-700 space-y-4">
+                <div className="prose prose-lg text-gray-700 space-y-4 justify-center">
                   <p>
                     Composite bonding is a very simple cosmetic procedure which
                     is completely pain free. During treatment a white resin
@@ -154,34 +92,59 @@ const CompositeBonding = () => {
           </div>
         </section>
 
-        {/* Benefits Section */}
-        <section className="py-16 lg:py-24 bg-gray-50">
+        {/* Q&A Section: Implant Info */}
+        <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                Why Choose Composite Bonding?
-              </h2>
-            </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {benefits.map((benefit, index) => (
-                <div
-                  key={index}
-                  className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
-                >
-                  <div className="flex items-start space-x-4">
-                    <div className="flex-shrink-0">{benefit.icon}</div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                        {benefit.title}
-                      </h3>
-                      <p className="text-gray-600">{benefit.description}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              {/* Left: Image */}
+              <div className="flex justify-center">
+                <img
+                  src="/services/Full%20Arch%20Implants/hero.jpg"
+                  alt="Full Arch Implants Hero"
+                  className="rounded-2xl shadow-lg max-w-full h-auto object-cover"
+                  style={{ maxHeight: 400 }}
+                />
+              </div>
+
+              {/* Right: Accordion Q&A */}
+              <div>
+                <Accordion type="single" collapsible className="space-y-4">
+                  <AccordionItem value="all-on-6">
+                    <AccordionTrigger className="text-left text-lg font-semibold text-gray-900 hover:text-[#63316b] transition-colors">
+                      Why Would I Want Composite Bonding?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-gray-600 leading-relaxed">
+                      Composite bonding is usually used when a patient has
+                      fractured their tooth or chipped the edges of their teeth.
+                      If they dislike the gaps between the teeth or even for
+                      fixing discolouration. If you are self-conscious of the
+                      way your teeth look or if you are wanting more of a
+                      cosmetic appearance.
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="all-on-4">
+                    <AccordionTrigger className="text-left text-lg font-semibold text-gray-900 hover:text-[#63316b] transition-colors">
+                      What Are The Advantages Of Composite Bonding?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-gray-600 leading-relaxed">
+                      It is a non-invasive treatment which can be reversed. It
+                      is also considered more cost effective than other cosmetic
+                      treatments, such as veneers or crowns. Achieving your
+                      desired look will give you that confidence to smile again
+                      without feeling self-conscious of your teeth and being
+                      proud of the smile that you have. Composite bonding starts
+                      from as little as £250 per tooth and a FREE consultation
+                      with our treatment coordinator to discuss your
+                      personalised treatment plan.
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+              </div>
             </div>
           </div>
         </section>
+
+   
 
         {/* Easy Steps Section */}
         <section className="py-20 bg-white">
@@ -240,32 +203,7 @@ const CompositeBonding = () => {
           </div>
         </section>
 
-        {/* FAQ Section */}
-        <section className="py-16 lg:py-24">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                Frequently Asked Questions
-              </h2>
-            </div>
-            <Accordion type="single" collapsible className="space-y-4">
-              {faqs.map((faq, index) => (
-                <AccordionItem
-                  key={index}
-                  value={`item-${index}`}
-                  className="bg-white rounded-lg shadow-sm border"
-                >
-                  <AccordionTrigger className="px-6 py-4 text-left font-semibold text-gray-900 hover:no-underline">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="px-6 pb-4 text-gray-700">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
-        </section>
+      
 
         {/* Service Tiles */}
         <ServiceTiles />
