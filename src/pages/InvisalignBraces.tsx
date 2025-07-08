@@ -4,6 +4,7 @@ import {
   Mail,
   Calendar,
   Play,
+  ArrowRight,
   ChevronLeft,
   ChevronRight,
   Eye,
@@ -112,16 +113,9 @@ const InvisalignBraces = () => {
             <span className="text-[#63316b]">Invisalign Braces</span> in
             Coventry
           </h1>
-          <p
-            className="text-2xl text-gray-600 mb-8 animate-fadeInUp"
-            style={{ animationDelay: "0.2s" }}
-          >
-            Discreet, removable, and virtually invisible aligners for a
-            confident smile — without the metal.
-          </p>
 
           <div
-            className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp"
+            className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp pt-16"
             style={{ animationDelay: "0.4s" }}
           >
             <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2 shadow-lg hover:shadow-xl">
@@ -142,18 +136,14 @@ const InvisalignBraces = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 animate-fadeInUp">
-                Straighten Your Smile with{" "}
-                <span className="text-[#63316b]">No Brackets or Wires</span>
+                What is{" "}
+                <span className="text-[#63316b]">Invisalign Braces?</span>
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                Misaligned teeth can affect your confidence, and traditional
-                braces aren't for everyone. At Coventry Road Dentalcare, we
-                offer Invisalign – the clear solution to straighter teeth for
-                adults and teens.
-              </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                Using advanced 3D imaging, we can show you your final smile even
-                before your treatment begins.
+                Misaligned teeth can knock your confidence, but we understand
+                that as an adult the thought of wearing braces can seem
+                daunting. Here at Coventry Road, we have the ideal solution to
+                both problems – we are pleased to offer Invisalign Braces.
               </p>
             </div>
 
@@ -196,6 +186,43 @@ const InvisalignBraces = () => {
         </div>
       </section>
 
+      {/* Benefits Grid */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 animate-fadeInUp">
+            Straight Teeth May Be A Phone Call Away
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {benefits.map((benefit, index) => {
+              // Center the last card if it's alone in the last row (not a multiple of 3)
+              const isLast = index === benefits.length - 1;
+              const needsCenter = benefits.length % 3 !== 0 && isLast;
+              return (
+                <div
+                  key={index}
+                  className={
+                    `bg-gray-50 rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 group hover:bg-[#63316b] hover:text-white` +
+                    (needsCenter
+                      ? " lg:col-span-3 flex flex-col items-center justify-center"
+                      : "")
+                  }
+                >
+                  <div className="mb-4 group-hover:scale-110 transition-transform">
+                    <benefit.icon className="w-8 h-8 text-[#63316b] group-hover:text-white mx-auto" />
+                  </div>
+                  <p className="font-medium group-hover:text-white">
+                    {benefit.title}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* Journey Carousel (now Benefits of Invisalign) */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -234,103 +261,41 @@ const InvisalignBraces = () => {
         </div>
       </section>
 
-      {/* Benefits Grid */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 animate-fadeInUp">
-              Why Choose <span className="text-[#63316b]">Invisalign?</span>
-            </h2>
-          </div>
+      
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {benefits.map((benefit, index) => {
-              // Center the last card if it's alone in the last row (not a multiple of 3)
-              const isLast = index === benefits.length - 1;
-              const needsCenter = benefits.length % 3 !== 0 && isLast;
-              return (
-                <div
-                  key={index}
-                  className={
-                    `bg-gray-50 rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 group hover:bg-[#63316b] hover:text-white` +
-                    (needsCenter
-                      ? " lg:col-span-3 flex flex-col items-center justify-center"
-                      : "")
-                  }
-                >
-                  <div className="mb-4 group-hover:scale-110 transition-transform">
-                    <benefit.icon className="w-8 h-8 text-[#63316b] group-hover:text-white mx-auto" />
-                  </div>
-                  <p className="font-medium group-hover:text-white">
-                    {benefit.title}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+   
 
-      {/* Conditions We Treat */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 animate-fadeInUp">
-              Is <span className="text-[#63316b]">Invisalign</span> Right for
-              You?
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {conditions.map((condition, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl p-6 hover:shadow-lg transition-all duration-300 flex items-center space-x-4"
-              >
-                <div className="flex-shrink-0">
-                  <condition.icon className="w-6 h-6 text-[#63316b]" />
-                </div>
-                <p className="font-medium text-gray-900">{condition.title}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-8">
-            <p className="text-lg text-gray-600">
-              Our dentists will recommend the best clear system for your case —
-              safe, affordable, and discreet.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="py-20 bg-[#63316b] text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-            Straight Teeth May Be a{" "}
-            <span className="text-white underline">Phone Call Away</span>
-          </h2>
-          <p className="text-xl mb-8 opacity-90">
-            We're here to help you smile again — book your free consultation
-            today.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 inline-flex items-center space-x-2">
-              <Phone className="w-5 h-5" />
-              <span>Call Now</span>
-            </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-[#63316b] transition-all duration-300 inline-flex items-center space-x-2">
-              <Calendar className="w-5 h-5" />
-              <span>Book Free Consultation</span>
-            </button>
-          </div>
-        </div>
-      </section>
 
       {/* Service Tiles */}
       <ServiceTiles />
+
+        {/* Final CTA Section */}
+  <section className="py-16 bg-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div className="bg-[#63316b]/5 rounded-2xl p-8 border border-[#63316b]/10 shadow-md">
+              <h3 className="text-2xl font-semibold mb-4 text-[#63316b]">
+                Ready to Transform Your Smile?
+              </h3>
+              <p className="text-lg mb-6 text-gray-700 opacity-90">
+                Book your free consultation today and discover how composite
+                bonding can enhance your smile.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button className="bg-[#63316b] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#63316b]/90 transition-all duration-300 inline-flex items-center space-x-2">
+                  <Calendar className="w-5 h-5" />
+                  <span>Book Free Consultation</span>
+                </button>
+                <Link
+                  to="/"
+                  className="border-2 border-[#63316b] text-[#63316b] px-8 py-4 rounded-full font-semibold hover:bg-[#63316b] hover:text-white transition-all duration-300 inline-flex items-center space-x-2"
+                >
+                  <ArrowRight className="w-5 h-5" />
+                  <span>Back to Home</span>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
 
       {/* Floating Chat CTA */}
       <div className="fixed bottom-6 right-6 z-50">
