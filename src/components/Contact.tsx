@@ -1,40 +1,44 @@
-import { useState } from 'react';
-import { MapPin, Phone, Mail, Send } from 'lucide-react';
+import { useState } from "react";
+import { MapPin, Phone, Mail, Send } from "lucide-react";
 
 const Contact = () => {
   const contactInfo = [
     {
       icon: MapPin,
       title: "Visit Our Clinic",
-      details: "123 Coventry Road\nBirmingham B26 3EA\nUnited Kingdom"
+      details: "123 Coventry Road\nBirmingham B26 3EA\nUnited Kingdom",
     },
     {
       icon: Phone,
       title: "Call Us Today",
       details: "024 7699 2020",
-      extra: "Emergency: 024 7699 2021"
+      extra: "Emergency: 024 7699 2021",
     },
     {
       icon: Mail,
       title: "Email Us",
-      details: "info@coventryroaddentalcare.com"
-    }
+      details: "info@coventryroaddentalcare.com",
+    },
   ];
 
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    service: '',
-    message: ''
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    service: "",
+    message: "",
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     const { name, value } = e.target;
-    setFormData(prevState => ({
+    setFormData((prevState) => ({
       ...prevState,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -60,14 +64,15 @@ const Contact = () => {
           <div className="inline-flex items-center space-x-2 bg-[#63316b]/10 text-[#63316b] px-4 py-2 rounded-full text-sm font-medium mb-6">
             <span>Contact Us</span>
           </div>
-          
+
           <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
             Get in Touch
             <span className="block text-[#63316b]">Today</span>
           </h2>
-          
+
           <p className="text-xl text-gray-600 leading-relaxed">
-            Ready to start your journey to better oral health? Contact us to schedule your consultation or ask any questions you might have.
+            Ready to start your journey to better oral health? Contact us to
+            schedule your consultation or ask any questions you might have.
           </p>
         </div>
 
@@ -75,7 +80,9 @@ const Contact = () => {
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-8">Visit Our Practice</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-8">
+                Visit Our Practice
+              </h3>
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
                   <div key={index} className="flex items-start space-x-4">
@@ -83,9 +90,15 @@ const Contact = () => {
                       <info.icon className="w-6 h-6 text-[#63316b]" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">{info.title}</h4>
+                      <h4 className="font-semibold text-gray-900 mb-1">
+                        {info.title}
+                      </h4>
                       <p className="text-gray-600">{info.details}</p>
-                      {info.extra && <p className="text-sm text-gray-500 mt-1">{info.extra}</p>}
+                      {info.extra && (
+                        <p className="text-sm text-gray-500 mt-1">
+                          {info.extra}
+                        </p>
+                      )}
                     </div>
                   </div>
                 ))}
@@ -94,43 +107,52 @@ const Contact = () => {
 
             {/* Opening Hours */}
             <div className="bg-gray-50 rounded-3xl p-8">
-              <h4 className="text-xl font-bold text-gray-900 mb-6">Opening Hours</h4>
-              <div className="space-y-3">
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Monday - Friday</span>
-                  <span className="font-semibold text-gray-900">8:00 AM - 6:00 PM</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Saturday</span>
-                  <span className="font-semibold text-gray-900">9:00 AM - 4:00 PM</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Sunday</span>
-                  <span className="font-semibold text-[#63316b]">Emergency Only</span>
-                </div>
+              <h4 className="text-xl font-bold text-gray-900 mb-6">
+                Find Us on the Map
+              </h4>
+              <div className="w-full h-72 rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
+                <iframe
+                  title="Coventry Road Dental Care Location"
+                  src="https://www.google.com/maps?q=123+Coventry+Road,+Birmingham+B26+3EA,+United+Kingdom&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
             </div>
 
-            {/* Emergency Contact */}
-            <div className="bg-[#63316b] rounded-3xl p-8 text-white">
+            {/* {/* Emergency Contact */}
+            {/* <div className="bg-[#63316b] rounded-3xl p-8 text-white">
               <h4 className="text-xl font-bold mb-4">Dental Emergency?</h4>
               <p className="mb-6 opacity-90">
-                We provide emergency dental care for urgent situations. Don't hesitate to call us if you're experiencing severe pain or dental trauma.
+                We provide emergency dental care for urgent situations. Don't
+                hesitate to call us if you're experiencing severe pain or dental
+                trauma.
               </p>
               <button className="bg-white text-[#63316b] px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors inline-flex items-center space-x-2">
                 <Phone className="w-5 h-5" />
                 <span>Emergency Line: 024 7699 2021</span>
               </button>
-            </div>
-          </div>
+            </div> */}
+          </div> 
 
           {/* Contact Form */}
           <div className="bg-gray-50 rounded-3xl p-8 lg:p-12">
-            <h3 className="text-2xl font-bold text-gray-900 mb-8">Send Us a Message</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-8">
+              Send Us a Message
+            </h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                  <label
+                    htmlFor="firstName"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
+                    First Name
+                  </label>
                   <input
                     type="text"
                     id="firstName"
@@ -142,7 +164,12 @@ const Contact = () => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                  <label
+                    htmlFor="lastName"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
+                    Last Name
+                  </label>
                   <input
                     type="text"
                     id="lastName"
@@ -156,7 +183,12 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
+                  Email Address
+                </label>
                 <input
                   type="email"
                   id="email"
@@ -169,7 +201,12 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                <label
+                  htmlFor="phone"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
+                  Phone Number
+                </label>
                 <input
                   type="tel"
                   id="phone"
@@ -181,7 +218,12 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">Service of Interest</label>
+                <label
+                  htmlFor="service"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
+                  Service of Interest
+                </label>
                 <select
                   id="service"
                   name="service"
@@ -200,7 +242,12 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
+                  Message
+                </label>
                 <textarea
                   id="message"
                   name="message"
